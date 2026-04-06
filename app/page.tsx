@@ -184,31 +184,37 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="relative overflow-x-clip pb-28 md:pb-0">
-        <section className="px-4 pb-12 pt-4 sm:px-6 lg:px-8 lg:pb-16">
+      <main className="overflow-x-clip pb-28 md:pb-0">
+        <section className="px-4 pb-14 pt-4 sm:px-6 lg:px-8 lg:pb-20 lg:pt-6">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-6 flex flex-col gap-3 rounded-full border bg-white/75 px-4 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 text-sm font-semibold text-[color:var(--text)]">
+            <div className="mb-8 flex flex-col gap-3 rounded-[24px] border bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] sm:flex-row sm:items-center sm:justify-between sm:px-5">
+              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
                 <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
                 Servicio local en Bilbao y alrededores
+                <span className="hidden h-1 w-1 rounded-full bg-[color:var(--line-strong)] sm:inline-flex" />
+                Reserva rápida por WhatsApp o llamada
               </div>
               <a
                 href={phoneUrl}
-                className="text-sm font-semibold text-[color:var(--text)] hover:text-[color:var(--accent)]"
+                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-[color:var(--heading)] hover:text-[color:var(--accent)]"
               >
+                <PhoneIcon />
                 Llamar ahora: {phoneDisplay}
               </a>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-              <div>
-                <span className="eyebrow">Reserva rápida por WhatsApp</span>
-                <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
+              <div className="max-w-3xl">
+                <span className="eyebrow">Peluquería y barbería a domicilio</span>
+                <h1 className="mt-6 text-4xl font-semibold leading-[1.02] text-[color:var(--heading)] sm:text-5xl lg:text-[4rem]">
                   Peluquero a domicilio en Bilbao
+                  <span className="mt-3 block text-[color:var(--text)]">
+                    rápido, cómodo y sin salir de casa.
+                  </span>
                 </h1>
-                <p className="mt-5 max-w-2xl text-lg leading-8 sm:text-xl">
-                  Corte de pelo y barbería en casa, sin desplazamientos ni esperas. Muy cómodo
-                  para personas mayores, sus familiares y profesionales con poco tiempo.
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
+                  Corte de pelo y barbería en casa para profesionales, familias y personas mayores
+                  que quieren un servicio cuidado, puntual y fácil de reservar.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -222,21 +228,28 @@ export default function HomePage() {
                   </a>
                 </div>
 
-                <p className="mt-4 text-sm font-medium text-[color:var(--text)]">
-                  Mensaje claro, respuesta rápida y cita fácil. También puedes reservar para tu
+                <p className="mt-5 max-w-2xl text-sm font-medium leading-6 text-[color:var(--heading)]">
+                  Confirmamos disponibilidad y precio orientativo antes de cerrar la cita. También
+                  puedes reservar para tu
                   padre, madre o un familiar.
                 </p>
 
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <span className="info-pill">WhatsApp rápido</span>
+                  <span className="info-pill">Ideal para personas mayores</span>
+                  <span className="info-pill">En casa u oficina</span>
+                </div>
+
                 <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                   {[
-                    "Sin esperas ni desplazamientos.",
-                    "Ideal para movilidad reducida.",
-                    "Atención puntual e higiénica.",
-                    "Servicio cómodo en casa u oficina.",
+                    "Sin desplazamientos ni salas de espera.",
+                    "Muy cómodo para personas mayores.",
+                    "Reserva clara por WhatsApp o llamada.",
+                    "Servicio en casa u oficina, según te convenga.",
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 rounded-2xl border bg-white/[0.65] px-4 py-3 text-sm font-medium text-[color:var(--text)]"
+                      className="flex items-center gap-3 rounded-[22px] border bg-white px-4 py-4 text-sm font-medium leading-6 text-[color:var(--heading)] shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
                     >
                       <CheckIcon />
                       {item}
@@ -245,44 +258,81 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <aside className="relative overflow-hidden rounded-[32px] border bg-[#1f1a16] p-6 text-white shadow-[0_30px_80px_rgba(31,26,22,0.3)] sm:p-8">
-                <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[rgba(182,95,45,0.35)] blur-3xl" />
-                <div className="absolute -bottom-12 -left-8 h-40 w-40 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
+              <aside className="surface-panel relative overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
                 <div className="relative">
-                  <span className="eyebrow border-white/[0.15] bg-white/10 text-white">
-                    Sin salir de casa
-                  </span>
-                  <h2 className="mt-5 text-3xl font-semibold leading-tight">
-                    La forma más cómoda de cortarte el pelo en Bilbao
-                  </h2>
-                  <p className="mt-4 text-base leading-7 text-white/[0.72]">
-                    Pensado para quien quiere rapidez, comodidad y un trato profesional, y para
-                    familias que prefieren cuidar a sus mayores sin moverlos de casa.
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span className="eyebrow border-transparent bg-[rgba(22,163,74,0.08)] text-[color:var(--accent)]">
+                        Reserva guiada
+                      </span>
+                      <h2 className="mt-5 text-3xl font-semibold leading-tight text-[color:var(--heading)]">
+                        Una cita clara desde el primer mensaje
+                      </h2>
+                    </div>
+                    <span className="hidden rounded-full border border-[rgba(22,163,74,0.18)] bg-white px-3 py-2 text-sm font-semibold text-[color:var(--accent)] sm:inline-flex">
+                      Bilbao
+                    </span>
+                  </div>
+                  <p className="mt-4 text-base leading-8 text-[color:var(--muted)]">
+                    Te confirmamos disponibilidad, precio orientativo y hora antes de reservar. Sin
+                    formularios, sin desplazamientos y sin pasos innecesarios.
                   </p>
 
-                  <div className="mt-6 rounded-[24px] border border-white/10 bg-white/10 p-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-                      Precio orientativo
+                  <div className="mt-6 rounded-[28px] border bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.05)]">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
+                      Servicio más solicitado
                     </p>
-                    <p className="mt-2 text-4xl font-semibold">Desde 25 €</p>
-                    <p className="mt-2 text-sm text-white/[0.72]">
-                      Corte a domicilio con reserva rápida por WhatsApp o llamada.
-                    </p>
+                    <div className="mt-4 flex items-end justify-between gap-4">
+                      <div>
+                        <p className="text-xl font-semibold text-[color:var(--heading)]">
+                          Corte a domicilio
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
+                          Cómodo, limpio y fácil de encajar en tu día.
+                        </p>
+                      </div>
+                      <p className="text-3xl font-semibold text-[color:var(--heading)]">25 €</p>
+                    </div>
                   </div>
 
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                  <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                     {[
-                      "Respuesta ágil por WhatsApp",
-                      "Cita fácil para familiares mayores",
-                      "Material preparado y servicio limpio",
-                    ].map((item) => (
+                      ["Reserva", "WhatsApp o llamada"],
+                      ["Zona", serviceArea],
+                      ["Pensado para", "Familias, mayores y profesionales"],
+                    ].map(([label, value]) => (
                       <div
-                        key={item}
-                        className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/[0.82]"
+                        key={label}
+                        className="rounded-[24px] border bg-white px-5 py-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
                       >
-                        {item}
+                        <p className="text-sm font-medium text-[color:var(--muted)]">{label}</p>
+                        <p className="mt-2 text-base font-semibold leading-6 text-[color:var(--heading)]">
+                          {value}
+                        </p>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="mt-6 rounded-[28px] border bg-[color:var(--background-subtle)] p-6">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
+                      Lo que tendrás claro antes de confirmar
+                    </p>
+                    <ul className="mt-4 space-y-3">
+                      {[
+                        "Disponibilidad según tu zona.",
+                        "Precio orientativo según servicio.",
+                        "Hora de cita y forma de reserva.",
+                      ].map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-sm font-medium leading-6 text-[color:var(--heading)]"
+                        >
+                          <CheckIcon />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </aside>
@@ -290,20 +340,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section-shell pt-0">
+        <section className="section-shell section-muted pt-0">
           <div className="mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="Confianza"
-              title="Un servicio pensado para que reservar sea fácil"
-              description="Todo está planteado para eliminar fricción: mensaje rápido, atención en casa y una experiencia profesional desde el primer contacto."
+              title="Un servicio pensado para reservar sin fricción"
+              description="Todo está diseñado para transmitir claridad desde el primer vistazo: contacto directo, atención en casa y una experiencia cómoda de principio a fin."
             />
             <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {trustPoints.map(({ title, description, icon: Icon }) => (
-                <article key={title} className="card">
-                  <div className="inline-flex rounded-2xl border bg-white p-3">
+                <article key={title} className="card h-full">
+                  <div className="inline-flex rounded-[20px] border border-[rgba(22,163,74,0.12)] bg-[rgba(22,163,74,0.06)] p-3">
                     <Icon />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                  <h3 className="mt-5 text-xl font-semibold text-[color:var(--heading)]">{title}</h3>
                   <p className="mt-3 text-sm leading-7">{description}</p>
                 </article>
               ))}
@@ -316,23 +366,27 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Servicios y precios"
               title="Opciones claras para decidir y reservar rápido"
-              description="Precios orientativos y fáciles de editar. Antes de confirmar, dejamos claro el importe según zona y servicio."
+              description="Precios orientativos, explicación sencilla y una llamada a la acción directa para pasar de la intención a la reserva."
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-3">
               {services.map((service) => (
                 <article
                   key={service.title}
                   className={`card flex h-full flex-col ${
-                    service.featured ? "border-[color:var(--accent)] bg-white" : ""
+                    service.featured
+                      ? "border-[color:var(--accent)] bg-white shadow-[0_24px_56px_rgba(22,163,74,0.08)]"
+                      : ""
                   }`}
                 >
                   {service.featured ? (
-                    <span className="inline-flex w-fit rounded-full bg-[rgba(182,95,45,0.12)] px-3 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[color:var(--accent)]">
+                    <span className="inline-flex w-fit rounded-full bg-[rgba(22,163,74,0.08)] px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--accent)]">
                       Muy útil para familias
                     </span>
                   ) : null}
-                  <h3 className="mt-4 text-2xl font-semibold">{service.title}</h3>
-                  <p className="mt-3 text-4xl font-semibold text-[color:var(--text)]">
+                  <h3 className="mt-4 text-2xl font-semibold text-[color:var(--heading)]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-4xl font-semibold text-[color:var(--heading)]">
                     {service.price}
                   </p>
                   <p className="mt-4 text-sm leading-7">{service.description}</p>
@@ -340,7 +394,7 @@ export default function HomePage() {
                     {service.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-3 text-sm font-medium text-[color:var(--text)]"
+                        className="flex items-start gap-3 text-sm font-medium text-[color:var(--heading)]"
                       >
                         <CheckIcon />
                         <span>{point}</span>
@@ -353,14 +407,13 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
-            <p className="mt-5 text-sm">
-              Precios orientativos editables. Confirma coste final al reservar según zona, horario
-              y tipo de servicio.
+            <p className="mt-5 text-sm leading-6">
+              El coste final se confirma antes de reservar según zona, horario y tipo de servicio.
             </p>
           </div>
         </section>
 
-        <section className="section-shell">
+        <section className="section-shell section-muted">
           <div className="mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="Para quién es"
@@ -369,11 +422,13 @@ export default function HomePage() {
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-3">
               {audiences.map((audience, index) => (
-                <article key={audience.title} className="card">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(182,95,45,0.12)] text-lg font-semibold text-[color:var(--accent)]">
+                <article key={audience.title} className="card h-full">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border bg-white text-sm font-semibold text-[color:var(--heading)]">
                     0{index + 1}
                   </div>
-                  <h3 className="mt-5 text-2xl font-semibold">{audience.title}</h3>
+                  <h3 className="mt-5 text-2xl font-semibold text-[color:var(--heading)]">
+                    {audience.title}
+                  </h3>
                   <p className="mt-3 text-sm leading-7">{audience.description}</p>
                 </article>
               ))}
@@ -390,11 +445,13 @@ export default function HomePage() {
             />
             <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {steps.map((step, index) => (
-                <article key={step.title} className="card">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--accent)] text-lg font-semibold text-white">
+                <article key={step.title} className="card h-full">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(22,163,74,0.16)] bg-[rgba(22,163,74,0.08)] text-lg font-semibold text-[color:var(--accent)]">
                     {index + 1}
                   </span>
-                  <h3 className="mt-5 text-xl font-semibold">{step.title}</h3>
+                  <h3 className="mt-5 text-xl font-semibold text-[color:var(--heading)]">
+                    {step.title}
+                  </h3>
                   <p className="mt-3 text-sm leading-7">{step.description}</p>
                 </article>
               ))}
@@ -402,7 +459,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section-shell">
+        <section className="section-shell section-muted">
           <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <SectionHeading
@@ -410,14 +467,14 @@ export default function HomePage() {
                 title="Más comodidad, menos tiempo perdido"
                 description="La reserva es sencilla y el servicio está pensado para que todo sea práctico, cercano y puntual."
               />
-              <div className="mt-8 rounded-[32px] border bg-[#1f1a16] p-8 text-white shadow-[0_24px_60px_rgba(31,26,22,0.28)]">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+              <div className="surface-panel mt-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
                   Lo que más valoran
                 </p>
-                <h3 className="mt-4 text-3xl font-semibold leading-tight">
+                <h3 className="mt-4 text-3xl font-semibold leading-tight text-[color:var(--heading)]">
                   Sin tráfico. Sin esperas. Sin mover a tu familiar.
                 </h3>
-                <p className="mt-4 max-w-xl text-base leading-7 text-white/[0.72]">
+                <p className="mt-4 max-w-xl text-base leading-8 text-[color:var(--muted)]">
                   Ideal si buscas una opción cómoda para ti o para alguien de tu familia, con un
                   trato profesional y una reserva directa.
                 </p>
@@ -425,11 +482,13 @@ export default function HomePage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {benefits.map((benefit) => (
-                <article key={benefit} className="card min-h-[160px]">
-                  <div className="inline-flex rounded-full bg-[rgba(182,95,45,0.12)] p-3 text-[color:var(--accent)]">
+                <article key={benefit} className="card flex min-h-[160px] flex-col justify-between">
+                  <div className="inline-flex rounded-full border border-[rgba(22,163,74,0.12)] bg-[rgba(22,163,74,0.06)] p-3 text-[color:var(--accent)]">
                     <CheckIcon />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold">{benefit}</h3>
+                  <h3 className="mt-5 text-xl font-semibold text-[color:var(--heading)]">
+                    {benefit}
+                  </h3>
                 </article>
               ))}
             </div>
@@ -440,17 +499,21 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="Testimonios"
-              title="Comentarios que reducen dudas y ayudan a reservar"
-              description="Tres situaciones muy comunes: cuidar a una persona mayor, ganar comodidad y resolver una cita con rapidez."
+              title="Comentarios que ayudan a reservar con confianza"
+              description="Experiencias que transmiten cercanía, puntualidad y comodidad, justo lo que más importa antes de contratar."
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-3">
               {testimonials.map((testimonial) => (
-                <article key={testimonial.name} className="card">
-                  <span className="text-4xl font-semibold text-[color:var(--accent)]">“</span>
-                  <p className="mt-3 text-base leading-8">{testimonial.quote}</p>
+                <article key={testimonial.name} className="card h-full">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--background-subtle)] text-3xl font-semibold text-[color:var(--line-strong)]">
+                    “
+                  </div>
+                  <p className="mt-5 text-base leading-8 text-[color:var(--text)]">
+                    {testimonial.quote}
+                  </p>
                   <div className="mt-6 border-t pt-5">
-                    <p className="font-semibold text-[color:var(--text)]">{testimonial.name}</p>
-                    <p className="text-sm">{testimonial.detail}</p>
+                    <p className="font-semibold text-[color:var(--heading)]">{testimonial.name}</p>
+                    <p className="text-sm leading-6">{testimonial.detail}</p>
                   </div>
                 </article>
               ))}
@@ -458,23 +521,23 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section-shell">
+        <section className="section-shell section-muted">
           <div className="mx-auto max-w-4xl">
             <SectionHeading
               eyebrow="Preguntas frecuentes"
               title="Dudas habituales antes de reservar"
-              description="Respuestas claras para que la decisión sea fácil y rápida."
+              description="Respuestas claras para que la decisión sea simple, rápida y sin incertidumbre."
             />
             <div className="mt-10 space-y-4">
               {faqs.map((faq) => (
-                <details key={faq.question} className="card group">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-lg font-semibold text-[color:var(--text)]">
+                <details key={faq.question} className="card group p-0">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold text-[color:var(--heading)] transition-colors hover:bg-[color:var(--background-subtle)] sm:px-8">
                     <span>{faq.question}</span>
-                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-white text-[color:var(--text)]">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color:var(--line-strong)] bg-white text-[color:var(--heading)] transition-transform duration-200 group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-4 max-w-3xl text-sm leading-7">{faq.answer}</p>
+                  <p className="px-6 pb-6 text-sm leading-7 sm:px-8 sm:pb-8">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -483,81 +546,95 @@ export default function HomePage() {
 
         <section className="section-shell pt-0">
           <div className="mx-auto max-w-6xl">
-            <div className="overflow-hidden rounded-[36px] border bg-[linear-gradient(135deg,#1f1a16_0%,#2e231c_55%,#3b2d22_100%)] px-6 py-10 text-white shadow-[0_30px_80px_rgba(31,26,22,0.24)] sm:px-8 lg:px-12 lg:py-14">
-              <div className="max-w-3xl">
-                <span className="eyebrow border-white/[0.15] bg-white/10 text-white">
-                  Reserva ahora
-                </span>
-                <h2 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl">
-                  Peluquero a domicilio en Bilbao para ti o para tu familiar
-                </h2>
-                <p className="mt-4 text-base leading-8 text-white/[0.72] sm:text-lg">
-                  Escríbenos por WhatsApp y te confirmamos disponibilidad lo antes posible. Si lo
-                  prefieres, también puedes llamar directamente.
-                </p>
-              </div>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={whatsappUrl} className="btn-primary">
-                  Reservar por WhatsApp
-                  <ArrowIcon />
-                </a>
-                <a
-                  href={phoneUrl}
-                  className="btn-secondary border-white/[0.15] bg-white/10 text-white hover:bg-white/[0.14]"
-                >
-                  <PhoneIcon />
-                  Llamar ahora
-                </a>
+            <div className="surface-panel">
+              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+                <div>
+                  <span className="eyebrow border-transparent bg-white text-[color:var(--heading)]">
+                    Reserva ahora
+                  </span>
+                  <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-[color:var(--heading)] sm:text-4xl">
+                    Peluquero a domicilio en Bilbao para ti o para tu familiar
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-base leading-8 text-[color:var(--muted)] sm:text-lg">
+                    Escríbenos por WhatsApp y te confirmamos disponibilidad lo antes posible. Si lo
+                    prefieres, también puedes llamar directamente.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <span className="info-pill">WhatsApp rápido</span>
+                    <span className="info-pill">Precio orientativo desde 25 €</span>
+                    <span className="info-pill">Servicio local en {serviceArea}</span>
+                  </div>
+                </div>
+
+                <div className="rounded-[28px] border bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.05)]">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
+                    Reserva directa
+                  </p>
+                  <div className="mt-5 flex flex-col gap-3">
+                    <a href={whatsappUrl} className="btn-primary w-full">
+                      Reservar por WhatsApp
+                      <ArrowIcon />
+                    </a>
+                    <a href={phoneUrl} className="btn-secondary w-full">
+                      <PhoneIcon />
+                      Llamar ahora
+                    </a>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-[color:var(--muted)]">
+                    También puedes reservar tú mismo para un familiar y coordinamos la cita de
+                    forma sencilla.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         <footer className="section-shell pt-0">
-          <div className="mx-auto max-w-6xl rounded-[28px] border bg-white/75 px-6 py-8 backdrop-blur">
+          <div className="mx-auto max-w-6xl rounded-[28px] border bg-white px-6 py-8 shadow-[0_10px_28px_rgba(15,23,42,0.04)]">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--text)]">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
                   Teléfono
                 </p>
                 <a
                   href={phoneUrl}
-                  className="mt-3 block font-semibold text-[color:var(--text)] hover:text-[color:var(--accent)]"
+                  className="mt-3 block font-semibold text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                 >
                   {phoneDisplay}
                 </a>
               </div>
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--text)]">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
                   WhatsApp
                 </p>
                 <a
                   href={whatsappUrl}
-                  className="mt-3 block font-semibold text-[color:var(--text)] hover:text-[color:var(--accent)]"
+                  className="mt-3 block font-semibold text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                 >
                   Reservar por mensaje
                 </a>
               </div>
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--text)]">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
                   Zona de servicio
                 </p>
-                <p className="mt-3">{serviceArea}</p>
+                <p className="mt-3 text-[color:var(--muted)]">{serviceArea}</p>
               </div>
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--text)]">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
                   Legal
                 </p>
                 <div className="mt-3 flex flex-col gap-2">
                   <Link
                     href="/aviso-legal"
-                    className="font-medium text-[color:var(--text)] hover:text-[color:var(--accent)]"
+                    className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                   >
                     Aviso legal
                   </Link>
                   <Link
                     href="/privacidad"
-                    className="font-medium text-[color:var(--text)] hover:text-[color:var(--accent)]"
+                    className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                   >
                     Privacidad
                   </Link>
@@ -568,7 +645,7 @@ export default function HomePage() {
         </footer>
       </main>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-[rgba(255,250,244,0.96)] px-4 py-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-white/95 px-4 py-3 shadow-[0_-12px_30px_rgba(15,23,42,0.08)] backdrop-blur md:hidden">
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-3">
           <a href={whatsappUrl} className="btn-primary px-4 py-3 text-sm">
             WhatsApp
@@ -594,7 +671,7 @@ function SectionHeading({
   return (
     <div>
       <span className="eyebrow">{eyebrow}</span>
-      <h2 className="section-title mt-5 max-w-3xl">{title}</h2>
+      <h2 className="section-title mt-5 max-w-3xl text-[color:var(--heading)]">{title}</h2>
       <p className="section-copy">{description}</p>
     </div>
   );
