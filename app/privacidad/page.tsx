@@ -43,9 +43,11 @@ export default function PrivacyPage() {
                 <li>
                   <strong>Nombre:</strong> {ownerName}
                 </li>
-                <li>
-                  <strong>{taxIdLabel}:</strong> {taxId}
-                </li>
+                {taxId ? (
+                  <li>
+                    <strong>{taxIdLabel}:</strong> {taxId}
+                  </li>
+                ) : null}
                 <li>
                   <strong>Direccion facilitada:</strong> {legalAddress}
                 </li>
@@ -154,7 +156,8 @@ export default function PrivacyPage() {
                   La informacion anterior se publica como version provisional de trabajo mientras el
                   proyecto se valida. Antes del lanzamiento publico conviene completar los datos de
                   contacto, definir un correo electronico y revisar el texto final segun la
-                  actividad real que vaya a desarrollarse.
+                  actividad real que vaya a desarrollarse. Los datos fiscales se mantienen fuera de
+                  la version publica mientras el sitio siga en pruebas.
                 </p>
               </section>
             ) : null}

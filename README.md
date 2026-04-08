@@ -38,6 +38,7 @@ Set the public site URL in your environment when deploying:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
 NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
+LEGAL_TAX_ID=
 ```
 
 Main business and SEO constants live in `lib/site.ts`, including:
@@ -46,6 +47,9 @@ Main business and SEO constants live in `lib/site.ts`, including:
 - Phone number
 - Service area
 - Site title and description
+
+The tax ID is intentionally not hardcoded in the repository. Keep it in `LEGAL_TAX_ID` and only
+publish it when the site is no longer in prelaunch mode.
 
 ## Project structure
 

@@ -43,9 +43,11 @@ export default function LegalPage() {
                 <li>
                   <strong>Nombre:</strong> {ownerName}
                 </li>
-                <li>
-                  <strong>{taxIdLabel}:</strong> {taxId}
-                </li>
+                {taxId ? (
+                  <li>
+                    <strong>{taxIdLabel}:</strong> {taxId}
+                  </li>
+                ) : null}
                 <li>
                   <strong>Direccion facilitada:</strong> {legalAddress}
                 </li>
@@ -94,7 +96,8 @@ export default function LegalPage() {
                   fase de pruebas y todavia no se ha comunicado alta como autonomo ni la existencia
                   de una sociedad para esta actividad. Antes del lanzamiento comercial definitivo,
                   este aviso legal debe completarse con el domicilio completo, el correo electronico
-                  de contacto y los datos fiscales o mercantiles que resulten aplicables.
+                  de contacto y los datos fiscales o mercantiles que resulten aplicables. Por
+                  prudencia, esos datos no se muestran aun en la version publica de pruebas.
                 </p>
               </section>
             ) : null}

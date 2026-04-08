@@ -8,11 +8,11 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://adampeluqueria.com";
 
 export const ownerName = "Oussama";
+export const isPrelaunch = true;
 export const taxIdLabel = "NIE";
-export const taxId = "Y7677396X";
+export const taxId = isPrelaunch ? "" : process.env.LEGAL_TAX_ID ?? "";
 export const legalAddress = "Bilbao, Bizkaia, Espana";
 export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
-export const isPrelaunch = true;
 
 export const siteName = "Peluquero a domicilio en Bilbao";
 export const seoTitle = "Peluquero a domicilio en Bilbao | Corte de pelo en casa";

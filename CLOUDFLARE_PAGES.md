@@ -50,12 +50,14 @@ Rellena estos datos en Cloudflare Pages como variables de entorno:
 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_CONTACT_EMAIL`
+- `LEGAL_TAX_ID` solo cuando el proyecto ya no este en fase de pruebas
 
 Ejemplo:
 
 ```txt
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
 NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
+LEGAL_TAX_ID=
 ```
 
 ## Opcion A: despliegue recomendado con GitHub
@@ -94,6 +96,7 @@ En `Settings > Environment variables`, anade:
 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_CONTACT_EMAIL`
+- `LEGAL_TAX_ID` cuando corresponda publicar los datos fiscales definitivos
 
 ## 5. Despliega
 
