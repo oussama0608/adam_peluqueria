@@ -5,8 +5,7 @@ export const phoneUrl = "tel:+34691250551";
 export const phoneDisplay = "+34 691 25 05 51";
 export const serviceArea = "Bilbao y alrededores";
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.CF_PAGES_URL ? `https://${process.env.CF_PAGES_URL}` : "https://adam-peluqueria.pages.dev");
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://adampeluqueria.com";
 
 export const ownerName = "Oussama";
 export const taxIdLabel = "NIE";

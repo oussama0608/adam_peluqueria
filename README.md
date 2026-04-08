@@ -36,8 +36,8 @@ npm run start
 Set the public site URL in your environment when deploying:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
+NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
+NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
 ```
 
 Main business and SEO constants live in `lib/site.ts`, including:

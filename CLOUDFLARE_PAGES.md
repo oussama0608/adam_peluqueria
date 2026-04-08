@@ -1,21 +1,17 @@
 # Cloudflare Pages
 
-## Recomendacion de dominio
+## Dominio elegido
 
-Mi recomendacion principal para este proyecto es usar un dominio `.es`, corto y facil de recordar.
+Dominio comprado para este proyecto:
 
-Opciones que me parecen buenas:
+- `adampeluqueria.com`
 
-1. `adampeluqueria.es`
-2. `adambarberbilbao.es`
-3. `peluqueroadomiciliobilbao.es`
+Es un buen dominio para lanzar ya:
 
-Recomendacion final:
-
-- Compra `adampeluqueria.es` si quieres construir marca.
-- Compra `peluqueroadomiciliobilbao.es` solo si priorizas SEO local por encima de marca.
-
-Para Google Ads, normalmente prefiero una marca sencilla antes que un dominio demasiado generico.
+- es corto
+- suena a marca
+- es facil de recordar
+- encaja bien con Google Ads
 
 ## Donde comprarlo
 
@@ -58,8 +54,8 @@ Rellena estos datos en Cloudflare Pages como variables de entorno:
 Ejemplo:
 
 ```txt
-NEXT_PUBLIC_SITE_URL=https://adampeluqueria.es
-NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.es
+NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
+NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
 ```
 
 ## Opcion A: despliegue recomendado con GitHub
@@ -143,8 +139,8 @@ La opcion mas barata para empezar es usar `Cloudflare Email Routing`.
 
 Ejemplo:
 
-- `hola@adampeluqueria.es`
-- `citas@adampeluqueria.es`
+- `hola@adampeluqueria.com`
+- `citas@adampeluqueria.com`
 
 Funcionamiento:
 
@@ -165,8 +161,8 @@ Pasos:
 
 Cuando tengas el dominio:
 
-- Dominio principal: `adampeluqueria.es`
-- Redireccion opcional: `www.adampeluqueria.es` al dominio principal
+- Dominio principal: `adampeluqueria.com`
+- Redireccion opcional: `www.adampeluqueria.com` al dominio principal
 
 ## Que revisar antes de lanzar Google Ads
 
