@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: seoTitle,
   description: siteDescription,
   applicationName: siteName,
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   keywords: [
     "peluquero a domicilio en Bilbao",
     "barbería a domicilio Bilbao",

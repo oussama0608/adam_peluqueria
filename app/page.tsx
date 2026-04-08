@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -188,11 +189,27 @@ export default function HomePage() {
         <div className="px-4 pt-3 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-3 rounded-[24px] border bg-white/92 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
-              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
-                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
-                Servicio local en Bilbao y alrededores
-                <span className="hidden h-1 w-1 rounded-full bg-[color:var(--line-strong)] sm:inline-flex" />
-                Reserva rápida por WhatsApp o llamada
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link
+                  href="/"
+                  className="inline-flex w-fit items-center rounded-[18px] border bg-white px-3 py-2 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
+                  aria-label={siteName}
+                >
+                  <Image
+                    src="/logo.png"
+                    alt={siteName}
+                    width={490}
+                    height={509}
+                    className="h-14 w-auto sm:h-16"
+                    priority
+                  />
+                </Link>
+                <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
+                  Servicio local en Bilbao y alrededores
+                  <span className="hidden h-1 w-1 rounded-full bg-[color:var(--line-strong)] sm:inline-flex" />
+                  Reserva rápida por WhatsApp o llamada
+                </div>
               </div>
               <a
                 href={phoneUrl}
