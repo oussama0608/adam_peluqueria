@@ -37,6 +37,7 @@ Set the public site URL in your environment when deploying:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
 ```
 
 Main business and SEO constants live in `lib/site.ts`, including:
@@ -59,3 +60,5 @@ Main business and SEO constants live in `lib/site.ts`, including:
 - The current design direction is premium, minimal, and conversion-focused.
 - The page is optimized for mobile-first booking flows.
 - Legal pages are placeholders and should be completed with final business data before launch.
+- This project is ready for static deployment on Cloudflare Pages.
+- See `CLOUDFLARE_PAGES.md` for the recommended deployment flow.
