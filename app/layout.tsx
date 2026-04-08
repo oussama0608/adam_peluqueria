@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 import { seoTitle, siteDescription, siteName, siteUrl } from "@/lib/site";
+
+const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -54,6 +57,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {googleTagId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-tag" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleTagId}');
+              `}
+            </Script>
+          </>
+        ) : null}
+      </head>
       <body className={manrope.className}>{children}</body>
     </html>
   );

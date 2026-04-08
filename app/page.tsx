@@ -185,9 +185,9 @@ export default function HomePage() {
       />
 
       <main className="overflow-x-clip pb-28 md:pb-0">
-        <section className="px-4 pb-14 pt-4 sm:px-6 lg:px-8 lg:pb-20 lg:pt-6">
+        <div className="px-4 pt-3 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-8 flex flex-col gap-3 rounded-[24px] border bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] sm:flex-row sm:items-center sm:justify-between sm:px-5">
+            <div className="flex flex-col gap-3 rounded-[24px] border bg-white/92 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
               <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
                 <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
                 Servicio local en Bilbao y alrededores
@@ -202,140 +202,147 @@ export default function HomePage() {
                 Llamar ahora: {phoneDisplay}
               </a>
             </div>
+          </div>
+        </div>
 
-            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
-              <div className="max-w-3xl">
-                <span className="eyebrow">Peluquería y barbería a domicilio</span>
-                <h1 className="mt-6 text-4xl font-semibold leading-[1.02] text-[color:var(--heading)] sm:text-5xl lg:text-[4rem]">
-                  Peluquero a domicilio en Bilbao
-                  <span className="mt-3 block text-[color:var(--text)]">
-                    rápido, cómodo y sin salir de casa.
-                  </span>
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
-                  Corte de pelo y barbería en casa para profesionales, familias y personas mayores
-                  que quieren un servicio cuidado, puntual y fácil de reservar.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a href={whatsappUrl} className="btn-primary">
-                    Reservar por WhatsApp
-                    <ArrowIcon />
-                  </a>
-                  <a href={phoneUrl} className="btn-secondary">
-                    <PhoneIcon />
-                    Llamar ahora
-                  </a>
-                </div>
-
-                <p className="mt-5 max-w-2xl text-sm font-medium leading-6 text-[color:var(--heading)]">
-                  Confirmamos disponibilidad y precio orientativo antes de cerrar la cita. También
-                  puedes reservar para tu
-                  padre, madre o un familiar.
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <span className="info-pill">WhatsApp rápido</span>
-                  <span className="info-pill">Ideal para personas mayores</span>
-                  <span className="info-pill">En casa u oficina</span>
-                </div>
-
-                <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {[
-                    "Sin desplazamientos ni salas de espera.",
-                    "Muy cómodo para personas mayores.",
-                    "Reserva clara por WhatsApp o llamada.",
-                    "Servicio en casa u oficina, según te convenga.",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 rounded-[22px] border bg-white px-4 py-4 text-sm font-medium leading-6 text-[color:var(--heading)] shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
-                    >
-                      <CheckIcon />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <aside className="surface-panel relative overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
-                <div className="relative">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <span className="eyebrow border-transparent bg-[rgba(22,163,74,0.08)] text-[color:var(--accent)]">
-                        Reserva guiada
+        <section className="px-4 pb-14 pt-4 sm:px-6 lg:px-8 lg:pb-20 lg:pt-6">
+          <div className="mx-auto max-w-6xl">
+            <div className="relative overflow-hidden rounded-[40px] border bg-white shadow-[0_28px_70px_rgba(15,23,42,0.07)]">
+              <div className="relative z-10 p-4 sm:p-6 lg:p-8">
+                <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
+                  <div className="max-w-3xl rounded-[32px] border border-white/80 bg-white/78 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] backdrop-blur sm:p-8">
+                    <span className="eyebrow bg-white/92">Peluquería y barbería a domicilio</span>
+                    <h1 className="mt-6 text-4xl font-semibold leading-[1.02] text-[color:var(--heading)] sm:text-5xl lg:text-[4rem]">
+                      Peluquero a domicilio en Bilbao
+                      <span className="mt-3 block text-[color:var(--text)]">
+                        rápido, cómodo y sin salir de casa.
                       </span>
-                      <h2 className="mt-5 text-3xl font-semibold leading-tight text-[color:var(--heading)]">
-                        Una cita clara desde el primer mensaje
-                      </h2>
-                    </div>
-                    <span className="hidden rounded-full border border-[rgba(22,163,74,0.18)] bg-white px-3 py-2 text-sm font-semibold text-[color:var(--accent)] sm:inline-flex">
-                      Bilbao
-                    </span>
-                  </div>
-                  <p className="mt-4 text-base leading-8 text-[color:var(--muted)]">
-                    Te confirmamos disponibilidad, precio orientativo y hora antes de reservar. Sin
-                    formularios, sin desplazamientos y sin pasos innecesarios.
-                  </p>
-
-                  <div className="mt-6 rounded-[28px] border bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.05)]">
-                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
-                      Servicio más solicitado
+                    </h1>
+                    <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
+                      Corte de pelo y barbería en casa para profesionales, familias y personas mayores
+                      que quieren un servicio cuidado, puntual y fácil de reservar.
                     </p>
-                    <div className="mt-4 flex items-end justify-between gap-4">
-                      <div>
-                        <p className="text-xl font-semibold text-[color:var(--heading)]">
-                          Corte a domicilio
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
-                          Cómodo, limpio y fácil de encajar en tu día.
-                        </p>
-                      </div>
-                      <p className="text-3xl font-semibold text-[color:var(--heading)]">25 €</p>
+
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                      <a href={whatsappUrl} className="btn-primary">
+                        Reservar por WhatsApp
+                        <ArrowIcon />
+                      </a>
+                      <a href={phoneUrl} className="btn-secondary">
+                        <PhoneIcon />
+                        Llamar ahora
+                      </a>
                     </div>
-                  </div>
 
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                    {[
-                      ["Reserva", "WhatsApp o llamada"],
-                      ["Zona", serviceArea],
-                      ["Pensado para", "Familias, mayores y profesionales"],
-                    ].map(([label, value]) => (
-                      <div
-                        key={label}
-                        className="rounded-[24px] border bg-white px-5 py-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
-                      >
-                        <p className="text-sm font-medium text-[color:var(--muted)]">{label}</p>
-                        <p className="mt-2 text-base font-semibold leading-6 text-[color:var(--heading)]">
-                          {value}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 rounded-[28px] border bg-[color:var(--background-subtle)] p-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
-                      Lo que tendrás claro antes de confirmar
+                    <p className="mt-5 max-w-2xl text-sm font-medium leading-6 text-[color:var(--heading)]">
+                      Confirmamos disponibilidad y precio orientativo antes de cerrar la cita. También
+                      puedes reservar para tu padre, madre o un familiar.
                     </p>
-                    <ul className="mt-4 space-y-3">
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <span className="info-pill bg-white/92">WhatsApp rápido</span>
+                      <span className="info-pill bg-white/92">Ideal para personas mayores</span>
+                      <span className="info-pill bg-white/92">En casa u oficina</span>
+                    </div>
+
+                    <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                       {[
-                        "Disponibilidad según tu zona.",
-                        "Precio orientativo según servicio.",
-                        "Hora de cita y forma de reserva.",
+                        "Sin desplazamientos ni salas de espera.",
+                        "Muy cómodo para personas mayores.",
+                        "Reserva clara por WhatsApp o llamada.",
+                        "Servicio en casa u oficina, según te convenga.",
                       ].map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-sm font-medium leading-6 text-[color:var(--heading)]"
+                          className="flex items-center gap-3 rounded-[22px] border bg-white/92 px-4 py-4 text-sm font-medium leading-6 text-[color:var(--heading)] shadow-[0_8px_24px_rgba(15,23,42,0.04)] backdrop-blur"
                         >
                           <CheckIcon />
-                          <span>{item}</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
                   </div>
+
+                  <aside className="surface-panel relative overflow-hidden bg-white/92 backdrop-blur">
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
+                    <div className="relative">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <span className="eyebrow border-transparent bg-[rgba(22,163,74,0.08)] text-[color:var(--accent)]">
+                            Reserva guiada
+                          </span>
+                          <h2 className="mt-5 text-3xl font-semibold leading-tight text-[color:var(--heading)]">
+                            Una cita clara desde el primer mensaje
+                          </h2>
+                        </div>
+                        <span className="hidden rounded-full border border-[rgba(22,163,74,0.18)] bg-white px-3 py-2 text-sm font-semibold text-[color:var(--accent)] sm:inline-flex">
+                          Bilbao
+                        </span>
+                      </div>
+                      <p className="mt-4 text-base leading-8 text-[color:var(--muted)]">
+                        Te confirmamos disponibilidad, precio orientativo y hora antes de reservar. Sin
+                        formularios, sin desplazamientos y sin pasos innecesarios.
+                      </p>
+
+                      <div className="mt-6 rounded-[28px] border bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.05)]">
+                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
+                          Servicio más solicitado
+                        </p>
+                        <div className="mt-4 flex items-end justify-between gap-4">
+                          <div>
+                            <p className="text-xl font-semibold text-[color:var(--heading)]">
+                              Corte a domicilio
+                            </p>
+                            <p className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
+                              Cómodo, limpio y fácil de encajar en tu día.
+                            </p>
+                          </div>
+                          <p className="text-3xl font-semibold text-[color:var(--heading)]">25 €</p>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                        {[
+                          ["Reserva", "WhatsApp o llamada"],
+                          ["Zona", serviceArea],
+                          ["Pensado para", "Familias, mayores y profesionales"],
+                        ].map(([label, value]) => (
+                          <div
+                            key={label}
+                            className="rounded-[24px] border bg-white px-5 py-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
+                          >
+                            <p className="text-sm font-medium text-[color:var(--muted)]">{label}</p>
+                            <p className="mt-2 text-base font-semibold leading-6 text-[color:var(--heading)]">
+                              {value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 rounded-[28px] border bg-[color:var(--background-subtle)] p-6">
+                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
+                          Lo que tendrás claro antes de confirmar
+                        </p>
+                        <ul className="mt-4 space-y-3">
+                          {[
+                            "Disponibilidad según tu zona.",
+                            "Precio orientativo según servicio.",
+                            "Hora de cita y forma de reserva.",
+                          ].map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-3 text-sm font-medium leading-6 text-[color:var(--heading)]"
+                            >
+                              <CheckIcon />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </aside>
                 </div>
-              </aside>
+              </div>
             </div>
           </div>
         </section>
