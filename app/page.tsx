@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -64,8 +63,8 @@ const audiences = [
     description: "Evitan desplazamientos, esperas y salidas incómodas. El servicio se hace en casa, con calma y comodidad.",
   },
   {
-    title: "Familiares que buscan comodidad",
-    description: "Puedes gestionar la cita por WhatsApp y dejar a tu padre, madre o familiar atendido sin complicaciones.",
+    title: "Hijos que buscan comodidad",
+    description: "Puedes gestionar la cita por WhatsApp y dejar a tu padre, hijo o familiar atendido sin complicaciones.",
   },
   {
     title: "Profesionales ocupados",
@@ -103,9 +102,9 @@ const benefits = [
 const testimonials = [
   {
     quote:
-      "Reservé para mi ama y fue comodísimo. Llegó puntual, la trató con mucha paciencia y quedó encantada con el resultado.",
-    name: "Maite",
-    detail: "Bilbao · Reserva para su madre",
+      "Reservé para mi padre y fue comodísimo. Llegó puntual, lo trató con mucha paciencia y quedó encantado con el resultado.",
+    name: "Ander",
+    detail: "Bilbao · Reserva para su padre",
   },
   {
     quote:
@@ -145,7 +144,7 @@ const faqs = [
   {
     question: "¿Se puede reservar para otra persona?",
     answer:
-      "Sí, especialmente para padres, madres o familiares mayores. Puedes gestionar la cita tú mismo y coordinamos el servicio de forma sencilla.",
+      "Sí, especialmente para padres, hijos o familiares mayores. Puedes gestionar la cita tú mismo y coordinamos el servicio de forma sencilla.",
   },
   {
     question: "¿Métodos de pago?",
@@ -189,27 +188,11 @@ export default function HomePage() {
         <div className="px-4 pt-3 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-3 rounded-[24px] border bg-white/92 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link
-                  href="/"
-                  className="inline-flex w-fit items-center rounded-[18px] border bg-white px-3 py-2 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
-                  aria-label={siteName}
-                >
-                  <Image
-                    src="/logo.png"
-                    alt={siteName}
-                    width={490}
-                    height={509}
-                    className="h-14 w-auto sm:h-16"
-                    priority
-                  />
-                </Link>
-                <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
-                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
-                  Servicio local en Bilbao y alrededores
-                  <span className="hidden h-1 w-1 rounded-full bg-[color:var(--line-strong)] sm:inline-flex" />
-                  Reserva rápida por WhatsApp o llamada
-                </div>
+              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[color:var(--heading)]">
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
+                Servicio local en Bilbao y alrededores
+                <span className="hidden h-1 w-1 rounded-full bg-[color:var(--line-strong)] sm:inline-flex" />
+                Reserva rápida por WhatsApp o llamada
               </div>
               <a
                 href={phoneUrl}
@@ -253,7 +236,7 @@ export default function HomePage() {
 
                     <p className="mt-5 max-w-2xl text-sm font-medium leading-6 text-[color:var(--heading)]">
                       Confirmamos disponibilidad y precio orientativo antes de cerrar la cita. También
-                      puedes reservar para tu padre, madre o un familiar.
+                      puedes reservar para tu padre, hijo o un familiar.
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-3">
@@ -496,7 +479,7 @@ export default function HomePage() {
                   Lo que más valoran
                 </p>
                 <h3 className="mt-4 text-3xl font-semibold leading-tight text-[color:var(--heading)]">
-                  Sin tráfico. Sin esperas. Sin mover a tu familiar.
+                  Sin tráfico. Sin esperas. Sin mover a tu padre o hijo.
                 </h3>
                 <p className="mt-4 max-w-xl text-base leading-8 text-[color:var(--muted)]">
                   Ideal si buscas una opción cómoda para ti o para alguien de tu familia, con un
@@ -577,7 +560,7 @@ export default function HomePage() {
                     Reserva ahora
                   </span>
                   <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-[color:var(--heading)] sm:text-4xl">
-                    Peluquero a domicilio en Bilbao para ti o para tu familiar
+                    Peluquero a domicilio en Bilbao para ti, tu padre o tu hijo
                   </h2>
                   <p className="mt-4 max-w-2xl text-base leading-8 text-[color:var(--muted)] sm:text-lg">
                     Escríbenos por WhatsApp y te confirmamos disponibilidad lo antes posible. Si lo
@@ -605,7 +588,7 @@ export default function HomePage() {
                     </a>
                   </div>
                   <p className="mt-4 text-sm leading-6 text-[color:var(--muted)]">
-                    También puedes reservar tú mismo para un familiar y coordinamos la cita de
+                    También puedes reservar tú mismo para tu padre, tu hijo o un familiar y coordinamos la cita de
                     forma sencilla.
                   </p>
                 </div>
