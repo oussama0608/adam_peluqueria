@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import {
   contactEmail,
   isPrelaunch,
@@ -62,12 +63,12 @@ export default function LegalPage() {
                 </li>
                 <li>
                   <strong>WhatsApp:</strong>{" "}
-                  <a
+                  <TrackedWhatsAppLink
                     href={whatsappUrl}
                     className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                   >
                     {phoneDisplay}
-                  </a>
+                  </TrackedWhatsAppLink>
                 </li>
                 <li>
                   <strong>Correo electronico:</strong>{" "}

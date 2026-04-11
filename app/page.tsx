@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import {
   phoneDisplay,
   phoneUrl,
@@ -292,10 +293,10 @@ export default function HomePage() {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href={whatsappUrl} className="btn-primary sm:min-w-[260px]">
+                    <TrackedWhatsAppLink href={whatsappUrl} className="btn-primary sm:min-w-[260px]">
                       <WhatsAppIcon />
                       Reservar por WhatsApp
-                    </a>
+                    </TrackedWhatsAppLink>
                     <a href={phoneUrl} className="btn-secondary sm:min-w-[188px]">
                       <PhoneIcon />
                       Llamar ahora
@@ -369,10 +370,10 @@ export default function HomePage() {
                     </ul>
 
                     <div className="mt-7 flex flex-col gap-3">
-                      <a href={whatsappUrl} className="btn-primary w-full">
+                      <TrackedWhatsAppLink href={whatsappUrl} className="btn-primary w-full">
                         <WhatsAppIcon />
                         Reservar por WhatsApp
-                      </a>
+                      </TrackedWhatsAppLink>
                       <a href={phoneUrl} className="btn-secondary w-full">
                         <PhoneIcon />
                         Llamar ahora
@@ -454,10 +455,10 @@ export default function HomePage() {
                     ))}
                   </ul>
 
-                  <a href={whatsappUrl} className="btn-primary mt-8 w-full">
+                  <TrackedWhatsAppLink href={whatsappUrl} className="btn-primary mt-8 w-full">
                     <WhatsAppIcon />
                     Reservar por WhatsApp
-                  </a>
+                  </TrackedWhatsAppLink>
                 </article>
               ))}
             </div>
@@ -647,10 +648,10 @@ export default function HomePage() {
                     Acción principal
                   </p>
                   <div className="mt-5 flex flex-col gap-3">
-                    <a href={whatsappUrl} className="btn-primary w-full">
+                    <TrackedWhatsAppLink href={whatsappUrl} className="btn-primary w-full">
                       <WhatsAppIcon />
                       Reservar por WhatsApp
-                    </a>
+                    </TrackedWhatsAppLink>
                     <a href={phoneUrl} className="btn-secondary w-full">
                       <PhoneIcon />
                       Llamar ahora
@@ -684,12 +685,12 @@ export default function HomePage() {
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
                   WhatsApp
                 </p>
-                <a
+                <TrackedWhatsAppLink
                   href={whatsappUrl}
                   className="mt-3 block font-semibold text-[color:var(--heading)] hover:text-[color:var(--accent)]"
                 >
                   Reservar por WhatsApp
-                </a>
+                </TrackedWhatsAppLink>
               </div>
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--heading)]">
@@ -723,13 +724,13 @@ export default function HomePage() {
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-white/95 px-4 py-3 shadow-[0_-12px_30px_rgba(15,23,42,0.08)] backdrop-blur md:hidden">
         <div className="mx-auto grid max-w-3xl grid-cols-[1.3fr_0.9fr] gap-2">
-          <a
+          <TrackedWhatsAppLink
             href={whatsappUrl}
             className="btn-primary px-4 py-3 text-[13px] font-semibold leading-5"
           >
             <WhatsAppIcon />
             Reservar por WhatsApp
-          </a>
+          </TrackedWhatsAppLink>
           <a
             href={phoneUrl}
             className="btn-secondary px-4 py-3 text-[13px] font-semibold leading-5"
