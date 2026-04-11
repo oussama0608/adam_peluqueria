@@ -14,9 +14,9 @@
   --accent-strong: #15803d;
   --line: #e2e8f0;
   --line-strong: #cbd5e1;
-  --shadow-sm: 0 12px 32px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 24px 56px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 36px 72px rgba(15, 23, 42, 0.08);
+  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 22px 56px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 30px 72px rgba(15, 23, 42, 0.08);
 }
 
 html {
@@ -41,7 +41,7 @@ body {
   }
 
   body {
-    @apply text-base leading-7 antialiased;
+    @apply text-[15px] leading-7 antialiased sm:text-base;
     text-rendering: optimizeLegibility;
   }
 
@@ -70,7 +70,7 @@ body {
 
 @layer components {
   .section-shell {
-    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+    @apply px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
   }
 
   .section-muted {
@@ -78,21 +78,21 @@ body {
   }
 
   .section-title {
-    @apply text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl;
+    @apply text-[2.15rem] font-semibold leading-[1.05] sm:text-4xl lg:text-5xl;
   }
 
   .section-copy {
-    @apply mt-5 max-w-2xl text-base leading-8 sm:text-lg;
+    @apply mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-bold uppercase tracking-[0.18em];
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[11px] font-bold uppercase tracking-[0.18em] sm:text-xs;
     background: var(--surface);
     color: var(--heading);
   }
 
   .card {
-    @apply rounded-[28px] border p-6 sm:p-8;
+    @apply rounded-[30px] border p-6 sm:p-8;
     background: var(--surface);
     box-shadow: var(--shadow-sm);
   }
@@ -103,8 +103,8 @@ body {
 
   .surface-panel {
     @apply rounded-[32px] border p-6 sm:p-8;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    box-shadow: var(--shadow-lg);
+    background: #f8fafc;
+    box-shadow: var(--shadow-md);
   }
 
   .info-pill {
@@ -114,14 +114,15 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex min-h-[56px] items-center justify-center gap-2 rounded-[18px] px-6 py-4 text-base font-semibold text-white;
+    @apply inline-flex min-h-[58px] items-center justify-center gap-2 rounded-[18px] px-6 py-4 text-base font-semibold text-white;
     background: var(--accent);
-    box-shadow: 0 18px 44px rgba(22, 163, 74, 0.18);
+    box-shadow: 0 16px 34px rgba(22, 163, 74, 0.18);
   }
 
   .btn-primary:hover {
     background: var(--accent-strong);
     transform: translateY(-1px);
+    box-shadow: 0 18px 38px rgba(22, 163, 74, 0.22);
   }
 
   .btn-primary:focus-visible {
@@ -130,10 +131,11 @@ body {
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-[56px] items-center justify-center gap-2 rounded-[18px] border px-6 py-4 text-base font-semibold;
+    @apply inline-flex min-h-[58px] items-center justify-center gap-2 rounded-[18px] border px-6 py-4 text-base font-semibold;
     background: #ffffff;
     border-color: var(--line-strong);
     color: var(--heading);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
   }
 
   .btn-secondary:hover {
