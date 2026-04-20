@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
@@ -10,6 +10,14 @@ const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
 const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-body",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +31,11 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   keywords: [
-    "peluquero a domicilio en Bilbao",
-    "barbería a domicilio Bilbao",
-    "corte de pelo en casa Bilbao",
-    "peluquería para personas mayores Bilbao",
+    "barberia premium a domicilio en Bilbao",
+    "peluqueria a domicilio Bilbao centro",
+    "corte ejecutivo a domicilio Bilbao",
+    "barberia para mayores en Bilbao",
+    "servicio peluqueria oficina Bilbao",
   ],
   alternates: {
     canonical: "/",
@@ -52,7 +61,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FFFFFF",
+  themeColor: "#0A0A0A",
 };
 
 export default function RootLayout({
@@ -80,7 +89,7 @@ export default function RootLayout({
           </>
         ) : null}
       </head>
-      <body className={manrope.className}>{children}</body>
+      <body className={`${manrope.variable} ${cormorant.variable} font-sans`}>{children}</body>
     </html>
   );
 }

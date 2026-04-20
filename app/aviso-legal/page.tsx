@@ -15,7 +15,7 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Aviso legal | Peluquero a domicilio en Bilbao",
+  title: "Aviso legal | Adam: Barberia & Cuidado en Casa",
   robots: {
     index: false,
     follow: true,

@@ -15,7 +15,7 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacidad | Peluquero a domicilio en Bilbao",
+  title: "Privacidad | Adam: Barberia & Cuidado en Casa",
   robots: {
     index: false,
     follow: true,
