@@ -45,8 +45,8 @@ export default function ServicesPage() {
               <div>
                 <p className="hero-copy">
                   El servicio no se plantea igual para una persona mayor, una residencia, un hotel
-                  o una oficina. Por eso la web separa cada intencion y permite consultar con mas
-                  claridad antes de reservar.
+                  o una oficina. Por eso cada servicio explica precio orientativo, condiciones y
+                  datos necesarios antes de reservar.
                 </p>
                 <ContactActions className="mt-8" />
               </div>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             <SectionHeading
               eyebrow="Como elegir"
               title="La pagina correcta depende de lo que necesitas resolver."
-              description="Esta arquitectura evita meter todas las busquedas en la home y ayuda a Google a entender mejor cada servicio."
+              description="Elige el servicio que mejor encaja con tu situacion y envia zona, horario aproximado y necesidades concretas por WhatsApp."
             />
             <div className="grid gap-4">
               {services.map((service) => (
@@ -93,7 +93,7 @@ export default function ServicesPage() {
             {[
               "Confirmar zona y desplazamiento antes de cerrar la cita",
               "Acordar servicio, precio orientativo y tiempo necesario",
-              "Evitar claims no confirmados sobre titulacion, seguro o reseñas",
+              "Trabajar siempre con cita previa y sin local abierto al publico",
             ].map((item) => (
               <article key={item} className="card">
                 <CheckIcon />

@@ -105,7 +105,7 @@ export default function PrepareHomeHaircutGuidePage() {
             <ul className="mt-6 grid gap-4">
               {[
                 "Servicio que necesitas.",
-                "Zona o direccion aproximada.",
+                "Zona o ubicacion aproximada.",
                 "Dia y franja horaria.",
                 "Foto de referencia si tienes una.",
                 "Necesidades especiales de movilidad, espacio o acceso.",

@@ -98,7 +98,7 @@ export default function ContactPage() {
             <div className="grid gap-4">
               {[
                 "Servicio que necesitas: corte, barba, persona mayor, residencia, hotel, oficina o evento.",
-                "Zona o direccion aproximada dentro de Bilbao o municipio cercano.",
+                "Ubicacion aproximada dentro de Bilbao o alrededores.",
                 "Dia y franja horaria preferida.",
                 "Si hay movilidad reducida, acceso dificil, parking o condiciones especiales.",
               ].map((item) => (
@@ -141,8 +141,8 @@ export default function ContactPage() {
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold">Perfil de Empresa en Google</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  Esta zona queda preparada para enlazar al perfil verificado de Google Maps y
-                  reforzar la coherencia entre web, Search Console y Google Business Profile.
+                  Cuando exista la URL definitiva, este bloque enlazara al perfil verificado de
+                  Google Maps de Adam Messaoudi.
                 </p>
               </div>
               {googleMapsUrl ? (
@@ -153,11 +153,11 @@ export default function ContactPage() {
                   target="_blank"
                 >
                   <MapPinIcon />
-                  Ver en Google Maps
+                  Ver perfil en Google Maps
                 </a>
-              ) : (
+                ) : (
                 <p className="max-w-sm text-sm leading-7 text-[color:var(--muted)]">
-                  TODO: proporcionar URL del Perfil de Empresa en Google.
+                  Perfil de Google Maps pendiente de enlazar cuando exista la URL definitiva.
                 </p>
               )}
             </div>

@@ -1,6 +1,7 @@
 # Adam Peluqueria
 
-Web local SEO para un servicio de peluqueria y barberia a domicilio con base en Bilbao.
+Web local SEO para el servicio de peluqueria y barberia exclusivamente a domicilio de Adam
+Messaoudi en Bilbao y alrededores.
 
 El proyecto ya no esta planteado como una landing centrada en Google Ads. La arquitectura actual
 prioriza trafico organico local, Google Business Profile, Google Maps, llamadas y contactos por
@@ -38,8 +39,8 @@ npm.cmd run build
 - `/servicios/peluqueria-mayores-movilidad-reducida`
 - `/servicios/residencias`
 - `/servicios/hoteles-oficinas-eventos`
-- `/zonas`: cobertura principal y municipios pendientes de confirmacion.
-- `/sobre-adam`: confianza, enfoque y datos pendientes.
+- `/zonas`: cobertura general en Bilbao y alrededores.
+- `/sobre-adam`: confianza, enfoque y datos confirmados.
 - `/contacto`: WhatsApp, telefono, horario, email y Google Maps.
 - `/guias`: hub de contenidos.
 - `/guias/preparar-corte-a-domicilio-bilbao`
@@ -51,15 +52,15 @@ Set these variables in deployment:
 
 ```txt
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
-NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
-NEXT_PUBLIC_LEGAL_NAME=
+NEXT_PUBLIC_CONTACT_EMAIL=adammessaoudi2000@outlook.com
+NEXT_PUBLIC_LEGAL_NAME=Adam Messaoudi
 NEXT_PUBLIC_LEGAL_ADDRESS=
-NEXT_PUBLIC_SERVICE_ADDRESS=
-NEXT_PUBLIC_OPENING_HOURS=
+NEXT_PUBLIC_SERVICE_ADDRESS=Servicio exclusivamente a domicilio. No existe local abierto al publico.
+NEXT_PUBLIC_OPENING_HOURS=Horario de atencion: 10:00-21:00, con cita previa
 NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS=
 NEXT_PUBLIC_GOOGLE_MAPS_URL=
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
-LEGAL_TAX_ID=
+LEGAL_TAX_ID=Y7721001F
 NEXT_PUBLIC_GOOGLE_TAG_ID=
 NEXT_PUBLIC_GOOGLE_WHATSAPP_CONVERSION_ID=
 NEXT_PUBLIC_GOOGLE_PHONE_CONVERSION_ID=
@@ -75,13 +76,24 @@ Business data, services, routes, FAQs, zones and image references live in `lib/s
 - Consent Mode v2 fields are prepared before loading Google tags.
 - WhatsApp and phone clicks are tracked only when `gtag` is available and loaded.
 
-## TODO before production
+## Datos confirmados
 
-- Confirm legal name, tax ID, legal address and public email.
-- Confirm real opening hours and service areas.
-- Confirm whether Barakaldo, Getxo, Basauri and Portugalete are actually served.
-- Confirm prices, displacement supplements and service conditions.
-- Provide Google Maps / Google Business Profile URL.
-- Add Search Console verification token.
-- Confirm professional credentials, experience, insurance or certifications before publishing them.
-- Add more real photos of home, hotel, office or residence services.
+- Titular: Adam Messaoudi.
+- NIF/NIE: Y7721001F.
+- Email: adammessaoudi2000@outlook.com.
+- Telefono y WhatsApp: 674 205 719.
+- Horario de atencion: 10:00-21:00, con cita previa.
+- Modalidad: servicio exclusivamente a domicilio, sin local abierto al publico.
+- Zona general: Bilbao y alrededores.
+- Precios: mayores, corte y barba 30 €; profesionales 25 €; otros servicios desde 20 €.
+- Residencias, hoteles, oficinas, eventos o grupos: solicitar presupuesto si el alcance puede variar.
+
+## Pendientes
+
+- Proporcionar URL definitiva de Google Maps/Google Business Profile.
+- Anadir codigo de verificacion de Google Search Console.
+- Confirmar dias concretos de apertura si son necesarios.
+- Confirmar credenciales profesionales antes de publicarlas.
+- Confirmar seguro o certificaciones antes de publicarlos.
+- Confirmar direccion fiscal solo si legalmente es imprescindible publicarla.
+- Confirmar municipios especificos atendidos dentro de Bilbao y alrededores.

@@ -9,6 +9,7 @@ import {
   legalName,
   phoneDisplay,
   phoneUrl,
+  serviceAreaSummary,
   siteRoutes,
   taxId,
   taxIdLabel,
@@ -57,7 +58,9 @@ export default function PrivacyPage() {
                     <strong>{taxIdLabel}:</strong> {taxId}
                   </li>
                   <li>
-                    <strong>Direccion:</strong> {legalAddress}
+                    <strong>Direccion fiscal:</strong>{" "}
+                    {legalAddress ||
+                      "Pendiente de confirmar solo si legalmente es imprescindible publicarla. No existe local abierto al publico."}
                   </li>
                   <li>
                     <strong>Telefono:</strong>{" "}
@@ -74,6 +77,9 @@ export default function PrivacyPage() {
                   <li>
                     <strong>Email:</strong> {contactEmail}
                   </li>
+                  <li>
+                    <strong>Zona general:</strong> {serviceAreaSummary}
+                  </li>
                 </ul>
               </section>
 
@@ -81,7 +87,7 @@ export default function PrivacyPage() {
                 <h2 className="text-xl font-semibold text-[color:var(--heading)]">Datos tratados</h2>
                 <p className="mt-4">
                   Si contactas por WhatsApp, telefono o email, pueden tratarse datos como nombre,
-                  telefono, contenido del mensaje, direccion aproximada de servicio, horario
+                  telefono, contenido del mensaje, ubicacion aproximada de servicio, horario
                   solicitado y cualquier informacion necesaria para responder o coordinar una cita.
                 </p>
               </section>
@@ -125,8 +131,8 @@ export default function PrivacyPage() {
                 <h2 className="text-xl font-semibold text-[color:var(--heading)]">Derechos</h2>
                 <p className="mt-4">
                   Puedes solicitar acceso, rectificacion, supresion, oposicion, limitacion o
-                  portabilidad usando los canales de contacto publicados. TODO: confirmar email
-                  definitivo para solicitudes de privacidad.
+                  portabilidad escribiendo a {contactEmail} o usando los canales de contacto
+                  publicados.
                 </p>
               </section>
 

@@ -22,8 +22,8 @@ export default function SiteFooter() {
               {siteName}
             </p>
             <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-              Peluqueria y barberia a domicilio con base en Bilbao. Servicio local, con cita
-              previa y confirmacion honesta de zona, horario y condiciones.
+              Peluqueria y barberia exclusivamente a domicilio en Bilbao y alrededores. Servicio
+              con cita previa y confirmacion de zona, horario y condiciones.
             </p>
             <ContactActions className="mt-5" compact />
           </div>
@@ -70,7 +70,7 @@ export default function SiteFooter() {
               </a>
             ) : (
               <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-                TODO: añadir URL del Perfil de Empresa en Google cuando este verificado.
+                Perfil de Google Maps pendiente de enlazar cuando exista la URL definitiva.
               </p>
             )}
             <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">{serviceAreaSummary}</p>

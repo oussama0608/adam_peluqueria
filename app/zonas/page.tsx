@@ -7,9 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import SectionHeading from "@/components/SectionHeading";
 import { breadcrumbsJsonLd, createMetadata, localBusinessJsonLd } from "@/lib/seo";
 import {
-  confirmedBilbaoAreas,
   confirmedPrimaryZone,
-  nearbyZonesToConfirm,
   serviceAreaSummary,
   siteRoutes,
 } from "@/lib/site";
@@ -45,9 +43,9 @@ export default function ZonasPage() {
               </div>
               <div>
                 <p className="hero-copy">
-                  La zona principal es {confirmedPrimaryZone}. Los municipios cercanos se muestran
-                  como pendientes de confirmacion para no prometer desplazamientos que no esten
-                  validados.
+                  La zona principal es {confirmedPrimaryZone} y el servicio se presta
+                  exclusivamente a domicilio. Si estas en alrededores, Adam confirma el
+                  desplazamiento antes de reservar.
                 </p>
                 <ContactActions className="mt-8" />
               </div>
@@ -61,34 +59,30 @@ export default function ZonasPage() {
               <MapPinIcon className="h-7 w-7 text-[color:var(--accent)]" />
               <h2 className="mt-5 text-3xl font-semibold">Bilbao</h2>
               <p className="mt-4 text-base leading-8 text-[color:var(--muted)]">
-                {serviceAreaSummary} Dentro de Bilbao se priorizan zonas como{" "}
-                {confirmedBilbaoAreas.join(", ")} y otras ubicaciones que puedan coordinarse por
-                horario y desplazamiento.
+                {serviceAreaSummary} No existe local abierto al publico: cada cita se coordina en
+                el domicilio, residencia, hotel, oficina o espacio acordado.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {confirmedBilbaoAreas.map((area) => (
-                  <div key={area} className="flex items-center gap-3 rounded-[16px] border p-4">
+                {[
+                  "Servicio exclusivamente a domicilio",
+                  "Cita previa",
+                  "Bilbao y alrededores",
+                  "Confirmacion de desplazamiento",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-[16px] border p-4">
                     <CheckIcon />
-                    <span className="text-sm font-semibold text-[color:var(--heading)]">{area}</span>
+                    <span className="text-sm font-semibold text-[color:var(--heading)]">{item}</span>
                   </div>
                 ))}
               </div>
             </article>
 
             <article className="card">
-              <h2 className="text-3xl font-semibold">Municipios cercanos</h2>
+              <h2 className="text-3xl font-semibold">Alrededores</h2>
               <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-                TODO: confirmar si se presta servicio habitual en estos municipios antes de
-                posicionarlos como cobertura fija.
+                Para zonas fuera de Bilbao, envia la ubicacion aproximada por WhatsApp. Adam te
+                dira si puede atender la cita y si el desplazamiento afecta al precio.
               </p>
-              <ul className="mt-6 grid gap-3">
-                {nearbyZonesToConfirm.map((zone) => (
-                  <li key={zone} className="flex items-start gap-3 text-sm leading-7">
-                    <CheckIcon />
-                    <span>{zone}</span>
-                  </li>
-                ))}
-              </ul>
             </article>
           </div>
         </section>
@@ -96,16 +90,16 @@ export default function ZonasPage() {
         <section className="section-shell pt-0">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <SectionHeading
-              eyebrow="SEO local honesto"
+              eyebrow="Cobertura responsable"
               title="Sin paginas duplicadas por ciudad."
-              description="No se crean paginas tipo 'peluquero a domicilio en Barakaldo' si no hay informacion original, cobertura confirmada y contenido util. Eso evita contenido pobre y mantiene la web mas fiable."
+              description="No se publican paginas locales especificas hasta confirmar municipios, condiciones de desplazamiento y contenido util para cada zona."
             />
             <div className="grid gap-4">
               {[
-                "Confirmar si cada municipio tiene disponibilidad real.",
+                "Confirmar si cada municipio tiene disponibilidad real antes de publicarlo.",
                 "Definir si hay suplemento por desplazamiento.",
-                "Añadir referencias reales cuando haya trabajos en esas zonas.",
-                "Actualizar Google Business Profile con el area de servicio correcta.",
+                "Anadir referencias reales cuando haya trabajos en esas zonas.",
+                "Actualizar Google Business Profile con el area de servicio correcta cuando este verificado.",
               ].map((item) => (
                 <div key={item} className="card">
                   <p className="text-sm font-semibold leading-7 text-[color:var(--heading)]">{item}</p>
@@ -121,7 +115,7 @@ export default function ZonasPage() {
               <div>
                 <h2 className="text-3xl font-semibold">No sabes si tu zona entra?</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  Envia direccion aproximada y tipo de servicio por WhatsApp. La respuesta debe ser
+                  Envia ubicacion aproximada y tipo de servicio por WhatsApp. La respuesta debe ser
                   clara antes de cerrar la cita.
                 </p>
               </div>

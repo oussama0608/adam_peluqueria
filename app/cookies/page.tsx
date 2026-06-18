@@ -55,8 +55,9 @@ export default function CookiesPage() {
                   esenciales en el banner.
                 </p>
                 <p className="mt-4">
-                  TODO: confirmar si se usara Google Analytics, Google Ads, Google Tag Manager u
-                  otra herramienta antes de activar sus IDs en produccion.
+                  Si se activan Google Analytics, Google Ads, Google Tag Manager u otras
+                  herramientas, sus identificadores deberan configurarse en las variables de
+                  entorno y respetar esta eleccion de consentimiento.
                 </p>
               </section>
 
@@ -66,8 +67,7 @@ export default function CookiesPage() {
                 </h2>
                 <p className="mt-4">
                   Puedes borrar los datos del sitio desde la configuracion de tu navegador para que
-                  vuelva a aparecer el banner de consentimiento. TODO: añadir un boton de gestion
-                  avanzada si se instalan mas categorias de cookies.
+                  vuelva a aparecer el banner de consentimiento.
                 </p>
               </section>
             </div>

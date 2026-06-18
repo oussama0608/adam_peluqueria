@@ -7,7 +7,7 @@ import { CheckIcon } from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
 import SectionHeading from "@/components/SectionHeading";
 import { breadcrumbsJsonLd, createMetadata, localBusinessJsonLd } from "@/lib/seo";
-import { professionalCredentials, siteRoutes } from "@/lib/site";
+import { legalName, openingHours, serviceAreaSummary, siteRoutes } from "@/lib/site";
 
 const route = siteRoutes.find((item) => item.href === "/sobre-adam")!;
 
@@ -36,11 +36,11 @@ export default function SobreAdamPage() {
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
                 <span className="eyebrow">Sobre Adam</span>
-                <h1 className="hero-title mt-6">Un servicio local que necesita confianza antes que promesas.</h1>
+                <h1 className="hero-title mt-6">Adam Messaoudi, peluqueria y barberia a domicilio.</h1>
                 <p className="hero-copy">
-                  La web se ha reorientado para explicar quien atiende, como se reserva y que datos
-                  faltan por confirmar. En servicios a domicilio, la confianza se construye con
-                  informacion concreta, fotos reales y respuestas honestas.
+                  Adam atiende exclusivamente a domicilio en Bilbao y alrededores, siempre con cita
+                  previa. Antes de reservar confirma servicio, zona, horario y precio para que la
+                  visita sea clara desde el primer mensaje.
                 </p>
                 <ContactActions className="mt-8" />
               </div>
@@ -72,7 +72,7 @@ export default function SobreAdamPage() {
                 "Respuesta directa por WhatsApp o telefono.",
                 "Confirmacion previa de zona, horario y precio.",
                 "Adaptacion del servicio al contexto: casa, residencia, hotel, oficina o evento.",
-                "Lenguaje claro, sin prometer titulaciones, seguros o reseñas hasta confirmarlas.",
+                "Servicio exclusivamente a domicilio, sin local abierto al publico.",
               ].map((item) => (
                 <article key={item} className="card">
                   <div className="flex items-start gap-3">
@@ -91,15 +91,15 @@ export default function SobreAdamPage() {
           <div className="mx-auto max-w-6xl">
             <div className="rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">
-                Datos pendientes
+                Datos confirmados
               </p>
-              <h2 className="mt-4 text-3xl font-semibold">Informacion que debe aportar Adam</h2>
+              <h2 className="mt-4 text-3xl font-semibold">Informacion basica antes de contactar</h2>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {[
-                  professionalCredentials,
-                  "TODO: confirmar nombre publico/profesional que debe mostrarse en la web.",
-                  "TODO: añadir foto profesional de Adam si se quiere reforzar el perfil local.",
-                  "TODO: confirmar años de experiencia, especialidades y cualquier certificacion real.",
+                  `Titular: ${legalName}.`,
+                  serviceAreaSummary,
+                  openingHours,
+                  "No existe local abierto al publico.",
                 ].map((item) => (
                   <div key={item} className="rounded-[18px] border bg-[rgba(10,10,10,0.35)] p-4">
                     <p className="text-sm leading-7 text-[color:var(--muted)]">{item}</p>

@@ -3,39 +3,55 @@ const env = (key: string) => process.env[key]?.trim() ?? "";
 export const siteUrl = env("NEXT_PUBLIC_SITE_URL") || "https://adampeluqueria.com";
 export const siteName = "Adam Peluqueria a domicilio";
 export const brandName = "Adam";
-export const businessDescription =
-  "Barberia y peluqueria a domicilio en Bilbao para particulares, personas mayores, residencias, hoteles, oficinas y eventos.";
-
-export const phoneDisplay = "+34 674 20 57 19";
-export const phoneUrl = "tel:+34674205719";
-export const whatsappUrl =
-  "https://wa.me/34674205719?text=Hola%20Adam,%20quiero%20consultar%20disponibilidad%20para%20un%20servicio%20de%20peluqueria%20o%20barberia%20a%20domicilio.";
-
+export const legalName = env("NEXT_PUBLIC_LEGAL_NAME") || "Adam Messaoudi";
+export const taxIdLabel = "NIF/NIE";
+export const taxId = env("LEGAL_TAX_ID") || "Y7721001F";
 export const contactEmail =
-  env("NEXT_PUBLIC_CONTACT_EMAIL") || "TODO: confirmar email publico de contacto";
+  env("NEXT_PUBLIC_CONTACT_EMAIL") || "adammessaoudi2000@outlook.com";
+
+export const phoneDisplay = "674 205 719";
+export const phoneInternational = "+34674205719";
+export const phoneUrl = "tel:+34674205719";
+export const whatsappUrl = "https://wa.me/34674205719";
+
 export const googleMapsUrl = env("NEXT_PUBLIC_GOOGLE_MAPS_URL");
 export const googleSiteVerification = env("NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION");
 
-export const legalName = env("NEXT_PUBLIC_LEGAL_NAME") || "TODO: confirmar nombre legal del titular";
-export const taxIdLabel = "NIF/NIE";
-export const taxId = env("LEGAL_TAX_ID") || "TODO: confirmar NIF/NIE";
-export const legalAddress =
-  env("NEXT_PUBLIC_LEGAL_ADDRESS") || "TODO: confirmar direccion legal o domicilio profesional";
+export const legalAddress = env("NEXT_PUBLIC_LEGAL_ADDRESS");
 export const publicServiceAddress =
-  env("NEXT_PUBLIC_SERVICE_ADDRESS") || "Servicio a domicilio con base operativa en Bilbao";
+  env("NEXT_PUBLIC_SERVICE_ADDRESS") ||
+  "Servicio exclusivamente a domicilio. No existe local abierto al publico.";
 export const openingHours =
-  env("NEXT_PUBLIC_OPENING_HOURS") || "TODO: confirmar horarios reales de atencion y reservas";
-export const professionalCredentials =
-  env("NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS") ||
-  "TODO: confirmar formacion, experiencia y credenciales profesionales publicables";
+  env("NEXT_PUBLIC_OPENING_HOURS") ||
+  "Horario de atencion: 10:00-21:00, con cita previa";
+export const openingHoursShort = "10:00-21:00, con cita previa";
 
+export const serviceMode = "Servicio exclusivamente a domicilio";
 export const confirmedPrimaryZone = "Bilbao";
-export const confirmedBilbaoAreas = ["Abando", "Indautxu", "Deusto", "Santutxu", "Casco Viejo"];
-export const nearbyZonesToConfirm = ["Barakaldo", "Getxo", "Basauri", "Portugalete"];
 export const serviceAreaSummary =
-  "Bilbao y municipios cercanos bajo confirmacion de disponibilidad y desplazamiento.";
+  "Bilbao y alrededores, con cita previa y confirmacion de desplazamiento.";
+export const confirmedBilbaoAreas: string[] = [];
+export const nearbyZonesToConfirm: string[] = [];
+
+export const baseServicePrice = "Desde 20 €";
+export const seniorCutAndBeardPrice = "Mayores, corte y barba: 30 €";
+export const professionalServicePrice = "Profesionales: 25 €";
+export const variableScopeBudget = "Solicitar presupuesto";
+
+export const businessDescription =
+  "Barberia y peluqueria exclusivamente a domicilio en Bilbao y alrededores para particulares, personas mayores, profesionales, residencias, hoteles, oficinas y eventos.";
 
 export const socialProfiles = googleMapsUrl ? [googleMapsUrl] : [];
+
+export const pendingRealDataTodos = [
+  "TODO: proporcionar URL definitiva de Google Maps/Google Business Profile.",
+  "TODO: añadir codigo de verificacion de Google Search Console.",
+  "TODO: confirmar dias concretos de apertura si son necesarios.",
+  "TODO: confirmar credenciales profesionales antes de publicarlas.",
+  "TODO: confirmar seguro o certificaciones antes de publicarlos.",
+  "TODO: confirmar direccion fiscal solo si legalmente es imprescindible publicarla.",
+  "TODO: confirmar municipios especificos atendidos dentro de Bilbao y alrededores.",
+];
 
 export type SiteRoute = {
   href: string;
@@ -49,9 +65,9 @@ export const siteRoutes: SiteRoute[] = [
   {
     href: "/",
     label: "Inicio",
-    title: "Peluqueria y barberia a domicilio en Bilbao | Adam",
+    title: "Peluqueria y barberia a domicilio en Bilbao | Adam Messaoudi",
     description:
-      "Servicio de peluqueria y barberia a domicilio en Bilbao para particulares, mayores, residencias, hoteles, oficinas y eventos.",
+      "Servicio exclusivamente a domicilio de peluqueria y barberia en Bilbao y alrededores, con cita previa, WhatsApp, telefono y precios orientativos.",
     priority: 1,
   },
   {
@@ -59,15 +75,15 @@ export const siteRoutes: SiteRoute[] = [
     label: "Servicios",
     title: "Servicios de peluqueria y barberia a domicilio en Bilbao | Adam",
     description:
-      "Cortes, arreglo de barba y servicios adaptados para domicilios, residencias, hoteles, oficinas y eventos en Bilbao.",
+      "Cortes, arreglo de barba y servicios adaptados para domicilios, mayores, profesionales, residencias, hoteles, oficinas y eventos en Bilbao y alrededores.",
     priority: 0.9,
   },
   {
     href: "/servicios/barberia-a-domicilio",
     label: "Barberia",
-    title: "Barberia a domicilio en Bilbao | Adam",
+    title: "Barberia a domicilio en Bilbao | Adam Messaoudi",
     description:
-      "Corte masculino y arreglo de barba a domicilio en Bilbao, con cita previa y confirmacion de zona por WhatsApp.",
+      "Corte masculino y arreglo de barba a domicilio en Bilbao y alrededores, con cita previa y consulta por WhatsApp.",
     priority: 0.85,
   },
   {
@@ -75,7 +91,7 @@ export const siteRoutes: SiteRoute[] = [
     label: "Mayores",
     title: "Peluqueria para mayores y movilidad reducida en Bilbao | Adam",
     description:
-      "Servicio de peluqueria a domicilio para personas mayores o con movilidad reducida en Bilbao, pensado para evitar desplazamientos.",
+      "Servicio a domicilio para personas mayores o con movilidad reducida en Bilbao y alrededores. Mayores, corte y barba: 30 €.",
     priority: 0.85,
   },
   {
@@ -83,7 +99,7 @@ export const siteRoutes: SiteRoute[] = [
     label: "Residencias",
     title: "Peluqueria para residencias en Bilbao | Adam",
     description:
-      "Servicio de peluqueria y barberia para residencias y centros de cuidado en Bilbao, con organizacion previa y atencion por turnos.",
+      "Servicio de peluqueria y barberia para residencias y centros de cuidado en Bilbao y alrededores, con presupuesto segun alcance.",
     priority: 0.8,
   },
   {
@@ -91,7 +107,7 @@ export const siteRoutes: SiteRoute[] = [
     label: "Hoteles y eventos",
     title: "Peluqueria para hoteles, oficinas y eventos en Bilbao | Adam",
     description:
-      "Servicio de peluqueria y barberia para hoteles, oficinas, equipos y eventos en Bilbao, con disponibilidad bajo consulta.",
+      "Servicio a domicilio para profesionales, hoteles, oficinas y eventos en Bilbao y alrededores. Profesionales: 25 €; grupos bajo presupuesto.",
     priority: 0.8,
   },
   {
@@ -99,15 +115,15 @@ export const siteRoutes: SiteRoute[] = [
     label: "Zonas",
     title: "Zonas de servicio de peluqueria a domicilio en Bilbao | Adam",
     description:
-      "Cobertura principal en Bilbao y municipios cercanos bajo consulta: Barakaldo, Getxo, Basauri y Portugalete pendientes de confirmacion.",
+      "Cobertura general en Bilbao y alrededores. Adam trabaja exclusivamente a domicilio y confirma desplazamiento antes de reservar.",
     priority: 0.75,
   },
   {
     href: "/sobre-adam",
     label: "Sobre Adam",
-    title: "Sobre Adam | Peluqueria a domicilio en Bilbao",
+    title: "Sobre Adam Messaoudi | Peluqueria a domicilio en Bilbao",
     description:
-      "Conoce el enfoque de Adam: un servicio de peluqueria y barberia a domicilio claro, cercano y adaptado al contexto de cada cliente.",
+      "Conoce el enfoque de Adam Messaoudi: servicio exclusivamente a domicilio, cita previa y comunicacion clara antes de cada visita.",
     priority: 0.7,
   },
   {
@@ -115,7 +131,7 @@ export const siteRoutes: SiteRoute[] = [
     label: "Contacto",
     title: "Contacto | Adam peluqueria a domicilio en Bilbao",
     description:
-      "Contacta por WhatsApp o telefono para consultar disponibilidad, zona, precio y horario de peluqueria a domicilio en Bilbao.",
+      "Contacta con Adam Messaoudi por WhatsApp, telefono o email para consultar disponibilidad, zona, precio y horario.",
     priority: 0.85,
   },
   {
@@ -123,7 +139,7 @@ export const siteRoutes: SiteRoute[] = [
     label: "Guias",
     title: "Guias de peluqueria a domicilio en Bilbao | Adam",
     description:
-      "Consejos practicos para preparar un servicio de peluqueria a domicilio, cuidar a personas mayores y organizar visitas profesionales.",
+      "Consejos practicos para preparar un servicio de peluqueria a domicilio en Bilbao y alrededores.",
     priority: 0.65,
   },
   {
@@ -189,33 +205,33 @@ export const services: Service[] = [
     title: "Corte masculino y barba sin desplazarte",
     shortTitle: "Barberia a domicilio",
     description:
-      "Servicio para quien necesita mantener el corte o la barba con comodidad, sin depender de huecos en una barberia ni perder tiempo en desplazamientos.",
-    intent: "Para cortes masculinos, mantenimiento de barba y visitas puntuales en casa u oficina.",
-    price: "Desde 40 EUR",
+      "Servicio para quien necesita mantener el corte o la barba en casa, sin desplazarse y con cita previa.",
+    intent: "Para cortes masculinos, mantenimiento de barba y visitas puntuales en domicilio.",
+    price: baseServicePrice,
     duration: "45-75 min aprox.",
-    audience: "Particulares, profesionales y citas en domicilio u oficina.",
+    audience: "Particulares y citas individuales a domicilio.",
     image: "/2.jpeg",
-    imageAlt: "Resultado de corte masculino realizado en barberia, usado como referencia del estilo de trabajo de Adam.",
+    imageAlt: "Resultado de corte masculino usado como referencia del estilo de trabajo de Adam.",
     includes: [
       "Corte masculino con acabado adaptado al estilo del cliente",
       "Arreglo de barba bajo consulta",
-      "Preparacion del espacio y recogida basica al terminar",
+      "Servicio exclusivamente a domicilio",
       "Confirmacion previa de zona, horario y precio final",
     ],
     notes: [
-      "TODO: confirmar si el precio incluye desplazamiento fuera de Bilbao.",
-      "No se afirma titulacion, seguro ni certificaciones hasta tener documentacion real.",
+      "Precio base para otros servicios: desde 20 €.",
+      "La disponibilidad depende de zona, horario y condiciones del domicilio.",
     ],
     faqs: [
       {
         question: "Se puede reservar solo arreglo de barba?",
         answer:
-          "Si, se puede consultar por WhatsApp. Adam confirmara si compensa como servicio independiente segun zona y horario.",
+          "Si, se puede consultar por WhatsApp. Adam confirmara precio, zona y horario antes de cerrar la cita.",
       },
       {
         question: "El servicio se puede hacer en oficina?",
         answer:
-          "Si el espacio permite trabajar con privacidad, luz y limpieza basica, se puede valorar una visita en oficina.",
+          "Si es una cita individual para profesionales, el precio orientativo es 25 €. Si hay varias personas o un evento, conviene solicitar presupuesto.",
       },
     ],
   },
@@ -228,27 +244,27 @@ export const services: Service[] = [
     description:
       "Servicio pensado para personas mayores o con movilidad reducida que prefieren ser atendidas en casa, con una cita tranquila y sin esperas.",
     intent:
-      "Para familias que buscan una solucion practica, respetuosa y facil de organizar en Bilbao.",
-    price: "Desde 30 EUR",
+      "Para familias que buscan una solucion practica y facil de organizar en Bilbao y alrededores.",
+    price: seniorCutAndBeardPrice,
     duration: "40-70 min aprox.",
     audience: "Personas mayores, movilidad reducida y familiares cuidadores.",
     image: "/7.jpeg",
-    imageAlt: "Corte de pelo corto como referencia de un servicio de peluqueria masculina para cliente adulto.",
+    imageAlt: "Corte de pelo corto como referencia de un servicio para cliente adulto.",
     includes: [
       "Ritmo de trabajo pausado y explicacion clara antes de empezar",
       "Corte clasico o mantenimiento sencillo",
       "Coordinacion con un familiar o cuidador cuando sea necesario",
-      "Confirmacion previa de accesibilidad, direccion y necesidades concretas",
+      "Confirmacion previa de accesibilidad, ubicacion aproximada y necesidades concretas",
     ],
     notes: [
-      "TODO: confirmar experiencia especifica con movilidad reducida, residencias o cuidados.",
+      "Mayores, corte y barba: 30 €.",
       "El servicio no sustituye asistencia sanitaria ni cuidados personales especializados.",
     ],
     faqs: [
       {
         question: "Puede estar presente un familiar durante la cita?",
         answer:
-          "Si. De hecho, en muchos casos es recomendable que una persona de confianza ayude a explicar preferencias o necesidades.",
+          "Si. En muchos casos es recomendable que una persona de confianza ayude a explicar preferencias o necesidades.",
       },
       {
         question: "Que pasa si la persona se cansa durante el servicio?",
@@ -267,11 +283,11 @@ export const services: Service[] = [
       "Atencion para residencias, centros de dia o viviendas comunitarias que necesitan organizar varios servicios con un mismo desplazamiento.",
     intent:
       "Para equipos que buscan coordinar cortes y mantenimiento de imagen sin trasladar a los residentes.",
-    price: "Presupuesto bajo consulta",
+    price: variableScopeBudget,
     duration: "Segun numero de personas",
     audience: "Residencias, centros de dia y cuidadores profesionales.",
     image: "/1.jpeg",
-    imageAlt: "Adam trabajando con material de barberia, usado como imagen real de referencia profesional.",
+    imageAlt: "Adam trabajando con material de barberia como imagen real de referencia.",
     includes: [
       "Planificacion previa de numero de personas y tiempos",
       "Servicio por turnos para facilitar la organizacion del centro",
@@ -279,8 +295,8 @@ export const services: Service[] = [
       "Presupuesto adaptado al volumen y desplazamiento",
     ],
     notes: [
-      "TODO: confirmar documentacion profesional requerida por residencias.",
-      "TODO: confirmar si existe seguro de responsabilidad civil antes de mencionarlo publicamente.",
+      "Residencias y centros: solicitar presupuesto segun alcance.",
+      "Si el centro exige documentacion concreta, debe indicarse antes de confirmar la visita.",
     ],
     faqs: [
       {
@@ -302,14 +318,14 @@ export const services: Service[] = [
     title: "Imagen preparada para momentos concretos",
     shortTitle: "Hoteles, oficinas y eventos",
     description:
-      "Servicio bajo consulta para clientes alojados en hoteles, equipos de trabajo, eventos privados o necesidades puntuales de imagen.",
+      "Servicio bajo consulta para clientes alojados en hoteles, profesionales, equipos de trabajo, eventos privados o necesidades puntuales de imagen.",
     intent:
-      "Para situaciones donde el tiempo, la ubicacion o la preparacion previa hacen mas util un servicio desplazado.",
-    price: "Presupuesto bajo consulta",
+      "Para situaciones donde el tiempo, la ubicacion o la preparacion previa hacen mas util un servicio a domicilio.",
+    price: "Profesionales: 25 €; grupos y eventos: solicitar presupuesto",
     duration: "Segun formato",
-    audience: "Hoteles, oficinas, equipos, eventos y visitas puntuales.",
+    audience: "Profesionales, hoteles, oficinas, equipos, eventos y visitas puntuales.",
     image: "/3.jpeg",
-    imageAlt: "Adam realizando un servicio de barberia, imagen real de referencia para citas profesionales.",
+    imageAlt: "Adam realizando un servicio de barberia, imagen real de referencia para citas a domicilio.",
     includes: [
       "Confirmacion previa del lugar, acceso y horario disponible",
       "Servicio discreto para no interrumpir la actividad del espacio",
@@ -317,14 +333,14 @@ export const services: Service[] = [
       "Presupuesto segun numero de servicios, horario y desplazamiento",
     ],
     notes: [
-      "TODO: confirmar disponibilidad real para hoteles, oficinas y eventos.",
-      "TODO: definir si existen suplementos por urgencia, festivos o desplazamiento.",
+      "Servicio para profesionales: 25 € en cita individual.",
+      "Hoteles, oficinas, eventos o grupos: solicitar presupuesto si el alcance puede variar.",
     ],
     faqs: [
       {
         question: "Se puede pedir para un hotel si estoy de visita en Bilbao?",
         answer:
-          "Se puede consultar. Es importante confirmar direccion, horario, acceso y si el hotel permite realizar el servicio en la habitacion o en un espacio adecuado.",
+          "Se puede consultar. Es importante confirmar ubicacion, horario, acceso y si el hotel permite realizar el servicio en la habitacion o en un espacio adecuado.",
       },
       {
         question: "Se atienden eventos con varias personas?",
@@ -344,19 +360,24 @@ export const homeFaqs: Faq[] = [
   {
     question: "Se atiende fuera de Bilbao?",
     answer:
-      "Bilbao es la zona principal. Barakaldo, Getxo, Basauri y Portugalete quedan pendientes de confirmacion segun disponibilidad y desplazamiento.",
+      "La zona general es Bilbao y alrededores. Adam confirma cada desplazamiento por WhatsApp antes de cerrar la cita.",
   },
   {
-    question: "Los precios son cerrados?",
+    question: "Cuales son los precios orientativos?",
     answer:
-      "Los precios publicados son orientativos y deben confirmarse antes de la cita, especialmente si hay desplazamiento, varios servicios o una visita a residencia, hotel, oficina o evento.",
+      "Precio base para otros servicios: desde 20 €. Mayores, corte y barba: 30 €. Servicio para profesionales: 25 €. Residencias, hoteles, oficinas, eventos o grupos: solicitar presupuesto si el alcance puede variar.",
+  },
+  {
+    question: "Hay local abierto al publico?",
+    answer:
+      "No. Adam trabaja exclusivamente a domicilio, siempre con cita previa.",
   },
 ];
 
 export const galleryImages = [
   {
     src: "/1.jpeg",
-    alt: "Adam realizando un servicio de barberia con material profesional.",
+    alt: "Adam realizando un servicio de barberia con material de trabajo.",
     caption: "Trabajo real",
   },
   {

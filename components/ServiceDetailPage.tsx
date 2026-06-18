@@ -105,7 +105,7 @@ export default function ServiceDetailPage({ service, children }: ServiceDetailPa
               </ul>
 
               <div className="mt-8 rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6">
-                <h2 className="text-2xl font-semibold">Datos pendientes de confirmar</h2>
+                <h2 className="text-2xl font-semibold">Notas antes de reservar</h2>
                 <ul className="mt-4 grid gap-3">
                   {service.notes.map((note) => (
                     <li key={note} className="flex items-start gap-3 text-sm leading-7">

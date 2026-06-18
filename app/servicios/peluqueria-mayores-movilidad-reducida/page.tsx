@@ -32,7 +32,7 @@ export default function MayoresMovilidadPage() {
         <li>Si la persona puede sentarse en una silla estable durante el servicio.</li>
         <li>Si necesita pausas, ayuda para moverse o presencia de un familiar.</li>
         <li>El estilo de corte habitual o una foto de referencia.</li>
-        <li>Direccion aproximada y accesibilidad del edificio.</li>
+        <li>Ubicacion aproximada y accesibilidad del edificio.</li>
       </ul>
 
       <h2>Limites claros</h2>

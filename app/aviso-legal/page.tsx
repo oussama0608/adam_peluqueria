@@ -7,8 +7,10 @@ import {
   contactEmail,
   legalAddress,
   legalName,
+  openingHours,
   phoneDisplay,
   phoneUrl,
+  serviceAreaSummary,
   siteRoutes,
   taxId,
   taxIdLabel,
@@ -40,9 +42,8 @@ export default function LegalPage() {
             <span className="eyebrow">Informacion legal</span>
             <h1 className="mt-5 text-4xl font-semibold">Aviso legal</h1>
             <p className="mt-5 text-base leading-8">
-              Esta pagina recoge los datos legales del sitio web. Algunos campos quedan marcados
-              como TODO porque deben confirmarse con informacion real del titular antes de publicar
-              la version definitiva.
+              Esta pagina recoge los datos legales del sitio web y las condiciones generales del
+              servicio de peluqueria y barberia exclusivamente a domicilio.
             </p>
 
             <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
@@ -58,7 +59,9 @@ export default function LegalPage() {
                     <strong>{taxIdLabel}:</strong> {taxId}
                   </li>
                   <li>
-                    <strong>Direccion legal:</strong> {legalAddress}
+                    <strong>Direccion fiscal:</strong>{" "}
+                    {legalAddress ||
+                      "Pendiente de confirmar solo si legalmente es imprescindible publicarla. No existe local abierto al publico."}
                   </li>
                   <li>
                     <strong>Telefono:</strong>{" "}
@@ -75,6 +78,12 @@ export default function LegalPage() {
                   <li>
                     <strong>Email:</strong> {contactEmail}
                   </li>
+                  <li>
+                    <strong>Horario de atencion:</strong> {openingHours}
+                  </li>
+                  <li>
+                    <strong>Zona general:</strong> {serviceAreaSummary}
+                  </li>
                 </ul>
               </section>
 
@@ -82,8 +91,8 @@ export default function LegalPage() {
                 <h2 className="text-xl font-semibold text-[color:var(--heading)]">Objeto del sitio</h2>
                 <p className="mt-4">
                   La web informa sobre servicios de peluqueria y barberia a domicilio en Bilbao y
-                  municipios cercanos bajo confirmacion, y facilita contacto por telefono o
-                  WhatsApp. No existe contratacion automatica ni pasarela de pago en el sitio.
+                  alrededores, y facilita contacto por telefono, WhatsApp o email. No existe local
+                  abierto al publico, contratacion automatica ni pasarela de pago en el sitio.
                 </p>
               </section>
 
@@ -92,9 +101,11 @@ export default function LegalPage() {
                   Condiciones del servicio
                 </h2>
                 <p className="mt-4">
-                  Los precios, horarios, desplazamientos y condiciones se confirman antes de cerrar
-                  cada cita. TODO: confirmar tarifas definitivas, suplementos de desplazamiento,
-                  horarios y municipios atendidos de forma habitual.
+                  Los precios orientativos son: precio base para otros servicios desde 20 €;
+                  mayores, corte y barba 30 €; servicio para profesionales 25 €. Residencias,
+                  hoteles, oficinas, eventos o grupos deben solicitar presupuesto si el alcance
+                  puede variar. Los desplazamientos y condiciones se confirman antes de cerrar cada
+                  cita.
                 </p>
               </section>
 

@@ -3,18 +3,17 @@ import Link from "next/link";
 
 import ContactActions from "@/components/ContactActions";
 import FaqList from "@/components/FaqList";
-import { ArrowIcon, CheckIcon, MapPinIcon } from "@/components/Icons";
+import { ArrowIcon, MapPinIcon } from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCards from "@/components/ServiceCards";
 import { breadcrumbsJsonLd, createMetadata, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
 import {
-  confirmedBilbaoAreas,
   galleryImages,
   googleMapsUrl,
   guidePosts,
   homeFaqs,
-  nearbyZonesToConfirm,
+  openingHours,
   serviceAreaSummary,
   siteRoutes,
 } from "@/lib/site";
@@ -82,7 +81,7 @@ export default function HomePage() {
                 <div className="relative aspect-[4/5]">
                   <Image
                     src="/1.jpeg"
-                    alt="Adam realizando un servicio de barberia con material profesional."
+                    alt="Adam realizando un servicio de barberia con material de trabajo."
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 48vw"
@@ -104,7 +103,7 @@ export default function HomePage() {
                     Horario
                   </p>
                   <p className="mt-2 text-sm font-semibold leading-6 text-[color:var(--heading)]">
-                    TODO: confirmar horarios reales
+                    {openingHours}
                   </p>
                 </div>
               </div>
@@ -116,8 +115,8 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="Servicios"
-              title="Una web pensada para búsquedas reales, no solo anuncios."
-              description="La demanda organica local suele aparecer por situaciones concretas: una persona mayor que no puede desplazarse, un hotel que necesita una solucion, una oficina que quiere ahorrar tiempo o una familia que busca comodidad."
+              title="Servicio a domicilio para necesidades concretas."
+              description="Cada cita empieza con una situacion distinta: una persona mayor que no puede desplazarse, un profesional que necesita ahorrar tiempo, una familia que busca comodidad o un centro que quiere organizar varios servicios."
             />
             <div className="mt-10">
               <ServiceCards />
@@ -143,8 +142,8 @@ export default function HomePage() {
             <div>
               <SectionHeading
                 eyebrow="Zonas"
-                title="Bilbao primero, municipios cercanos bajo confirmacion."
-                description="Para SEO local es mejor ser claro que prometer cobertura que luego no se puede atender. Bilbao es la zona principal; otros municipios se validan caso por caso."
+                title="Bilbao y alrededores, siempre con cita previa."
+                description="Adam trabaja exclusivamente a domicilio. Antes de reservar confirma zona, horario y condiciones del desplazamiento."
               />
               <Link
                 href="/zonas"
@@ -159,14 +158,15 @@ export default function HomePage() {
                 <MapPinIcon className="h-6 w-6 text-[color:var(--accent)]" />
                 <h2 className="mt-4 text-2xl font-semibold">Bilbao</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  Zonas habituales dentro de Bilbao: {confirmedBilbaoAreas.join(", ")}.
+                  Bilbao es la referencia principal para organizar las citas a domicilio.
                 </p>
               </article>
               <article className="card">
                 <MapPinIcon className="h-6 w-6 text-[color:var(--accent)]" />
-                <h2 className="mt-4 text-2xl font-semibold">Municipios cercanos</h2>
+                <h2 className="mt-4 text-2xl font-semibold">Alrededores</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  TODO: confirmar cobertura real para {nearbyZonesToConfirm.join(", ")}.
+                  Si estas fuera de Bilbao, envia la zona aproximada por WhatsApp para confirmar si
+                  el desplazamiento encaja.
                 </p>
               </article>
             </div>
@@ -183,8 +183,8 @@ export default function HomePage() {
                   description="Estas imagenes ayudan a entender el tipo de corte, preparacion y acabado. Las fotos de servicio a domicilio deben ampliarse cuando esten disponibles."
                 />
                 <p className="mt-6 text-sm leading-7 text-[color:var(--muted)]">
-                  TODO: añadir fotos reales del montaje a domicilio, material preparado, visitas en
-                  casa/oficina y foto profesional de Adam si se quiere reforzar confianza local.
+                  Adam trabaja exclusivamente a domicilio. Las proximas fotos deberian mostrar
+                  tambien el montaje real en casa, oficina o centro cuando esten disponibles.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -215,7 +215,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Google Business Profile"
                 title="La web queda preparada para conectarse con Google Maps."
-                description="Cuando el perfil este verificado, la URL podra mostrarse en contacto, footer y datos estructurados. Google recomienda informacion completa, horarios actualizados, fotos y respuestas a reseñas para mejorar la presencia local."
+                description="Cuando el perfil este verificado, la URL podra mostrarse en contacto, footer y datos estructurados para mantener coherencia entre web y Perfil de Empresa en Google."
               />
               <div className="mt-8 rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6">
                 {googleMapsUrl ? (
@@ -230,7 +230,7 @@ export default function HomePage() {
                   </a>
                 ) : (
                   <p className="text-sm leading-7 text-[color:var(--muted)]">
-                    TODO: proporcionar la URL del Perfil de Empresa en Google para enlazarla aqui.
+                    Perfil de Google Maps pendiente de enlazar cuando exista la URL definitiva.
                   </p>
                 )}
               </div>
@@ -280,7 +280,7 @@ export default function HomePage() {
               <div>
                 <h2 className="text-3xl font-semibold">Consulta zona, horario y precio antes de reservar.</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  Envia el tipo de servicio y direccion aproximada. Adam respondera con una
+                  Envia el tipo de servicio y ubicacion aproximada. Adam respondera con una
                   propuesta clara si puede atenderlo.
                 </p>
               </div>

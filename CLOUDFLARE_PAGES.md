@@ -30,8 +30,8 @@ Cloudflare te pedira datos reales de contacto para registrar el dominio.
 Prepara esto antes de empezar:
 
 - nombre y apellidos
-- email real que puedas verificar
-- telefono
+- email real que puedas verificar: `adammessaoudi2000@outlook.com`
+- telefono: `674 205 719`
 - direccion completa
 - ciudad
 - provincia
@@ -51,10 +51,10 @@ Rellena estos datos en Cloudflare Pages como variables de entorno:
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_CONTACT_EMAIL`
 - `NEXT_PUBLIC_LEGAL_NAME`
-- `NEXT_PUBLIC_LEGAL_ADDRESS`
+- `NEXT_PUBLIC_LEGAL_ADDRESS` solo si legalmente es imprescindible publicar direccion fiscal
 - `NEXT_PUBLIC_SERVICE_ADDRESS`
 - `NEXT_PUBLIC_OPENING_HOURS`
-- `NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS`
+- `NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS` solo si hay credenciales confirmadas para publicar
 - `NEXT_PUBLIC_GOOGLE_MAPS_URL` cuando exista el perfil verificado
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` cuando Search Console proporcione el token
 - `LEGAL_TAX_ID`
@@ -66,15 +66,15 @@ Ejemplo:
 
 ```txt
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
-NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
-NEXT_PUBLIC_LEGAL_NAME=
+NEXT_PUBLIC_CONTACT_EMAIL=adammessaoudi2000@outlook.com
+NEXT_PUBLIC_LEGAL_NAME=Adam Messaoudi
 NEXT_PUBLIC_LEGAL_ADDRESS=
-NEXT_PUBLIC_SERVICE_ADDRESS=Servicio a domicilio con base operativa en Bilbao
-NEXT_PUBLIC_OPENING_HOURS=
+NEXT_PUBLIC_SERVICE_ADDRESS=Servicio exclusivamente a domicilio. No existe local abierto al publico.
+NEXT_PUBLIC_OPENING_HOURS=Horario de atencion: 10:00-21:00, con cita previa
 NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS=
 NEXT_PUBLIC_GOOGLE_MAPS_URL=
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
-LEGAL_TAX_ID=
+LEGAL_TAX_ID=Y7721001F
 NEXT_PUBLIC_GOOGLE_TAG_ID=
 NEXT_PUBLIC_GOOGLE_WHATSAPP_CONVERSION_ID=
 NEXT_PUBLIC_GOOGLE_PHONE_CONVERSION_ID=
@@ -160,10 +160,10 @@ Si compras el dominio en Cloudflare Registrar:
 
 La opcion mas barata para empezar es usar `Cloudflare Email Routing`.
 
-Ejemplo:
+Ejemplo futuro si se crea correo con dominio propio:
 
-- `hola@adampeluqueria.com`
-- `citas@adampeluqueria.com`
+- `contacto@adampeluqueria.com`
+- destino de reenvio: `adammessaoudi2000@outlook.com`
 
 Funcionamiento:
 
@@ -175,10 +175,10 @@ Pasos:
 
 1. Compra y activa el dominio.
 2. Entra en `Email Routing` dentro de Cloudflare.
-3. Crea una direccion como `hola`.
-4. Pon como destino tu Gmail real.
-5. Verifica ese Gmail.
-6. Copia ese correo final en `NEXT_PUBLIC_CONTACT_EMAIL`.
+3. Crea una direccion como `contacto`.
+4. Pon como destino `adammessaoudi2000@outlook.com` u otro email real que Adam confirme.
+5. Verifica ese destino.
+6. Copia el correo publico elegido en `NEXT_PUBLIC_CONTACT_EMAIL`.
 
 ## Registros recomendados
 
@@ -191,10 +191,10 @@ Cuando tengas el dominio:
 
 1. Que el telefono y WhatsApp respondan.
 2. Que el dominio final este puesto en `NEXT_PUBLIC_SITE_URL`.
-3. Que haya un email real de contacto.
+3. Que el email de contacto sea `adammessaoudi2000@outlook.com`.
 4. Que el aviso legal, privacidad y cookies tengan datos reales.
 5. Que el Perfil de Empresa en Google este verificado y tenga la misma informacion que la web.
 6. Que horarios, telefono, categoria, servicios, fotos y areas de servicio coincidan en Google Maps.
 7. Que Search Console tenga la propiedad del dominio verificada.
 8. Que no actives tags de Google Ads o analytics sin revisar cookies y consentimiento.
-9. Que no publiques claims de titulacion, seguro, certificaciones o reseñas sin prueba real.
+9. Que no publiques datos profesionales no confirmados ni reseñas sin prueba real.
