@@ -22,7 +22,7 @@ export default function SiteHeader() {
               height={112}
               priority
               sizes="56px"
-              className="brand-pole h-full w-full object-contain"
+              className="brand-pole"
             />
           </span>
           <span>

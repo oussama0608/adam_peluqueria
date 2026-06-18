@@ -100,15 +100,20 @@ img {
   }
 
   .logo-mark {
-    @apply grid h-14 w-14 shrink-0 place-items-center;
+    @apply flex h-14 w-10 shrink-0 items-center justify-center overflow-hidden;
     perspective: 560px;
   }
 
   .brand-pole {
     animation: barber-pole-rotate 12s linear infinite;
     filter: drop-shadow(0 8px 14px rgba(12, 41, 95, 0.16));
+    height: 3.5rem !important;
+    max-height: 3.5rem;
+    max-width: 2.5rem;
+    object-fit: contain;
     transform-origin: center;
     transform-style: preserve-3d;
+    width: auto !important;
     will-change: transform;
   }
 
