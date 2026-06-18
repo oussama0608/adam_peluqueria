@@ -15,7 +15,7 @@ export const metadata = createMetadata({
   title: route.title,
   description: route.description,
   path: route.href,
-  image: "/3.jpeg",
+  image: "/images/adam-hero-bilbao.png",
 });
 
 const breadcrumbs = [
@@ -47,12 +47,12 @@ export default function SobreAdamPage() {
               <div className="hero-media shadow-[var(--shadow-md)]">
                 <div className="relative aspect-[4/5]">
                   <Image
-                    src="/3.jpeg"
-                    alt="Adam realizando un servicio de barberia, imagen real de referencia."
+                    src="/images/adam-hero-bilbao.png"
+                    alt="Adam, peluquero y barbero a domicilio en Bilbao"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 48vw"
-                    className="object-cover"
+                    className="object-contain object-bottom"
                   />
                 </div>
               </div>
