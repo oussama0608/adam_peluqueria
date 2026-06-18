@@ -14,7 +14,8 @@ export const phoneInternational = "+34674205719";
 export const phoneUrl = "tel:+34674205719";
 export const whatsappUrl = "https://wa.me/34674205719";
 
-export const googleMapsUrl = env("NEXT_PUBLIC_GOOGLE_MAPS_URL");
+export const googleMapsUrl =
+  env("NEXT_PUBLIC_GOOGLE_MAPS_URL") || "https://maps.app.goo.gl/ebmWQhwM8CENDJYv6";
 export const googleSiteVerification = env("NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION");
 
 export const legalAddress = env("NEXT_PUBLIC_LEGAL_ADDRESS");
@@ -44,7 +45,6 @@ export const businessDescription =
 export const socialProfiles = googleMapsUrl ? [googleMapsUrl] : [];
 
 export const pendingRealDataTodos = [
-  "TODO: proporcionar URL definitiva de Google Maps/Google Business Profile.",
   "TODO: añadir codigo de verificacion de Google Search Console.",
   "TODO: confirmar dias concretos de apertura si son necesarios.",
   "TODO: confirmar credenciales profesionales antes de publicarlas.",

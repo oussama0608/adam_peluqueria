@@ -55,7 +55,7 @@ Rellena estos datos en Cloudflare Pages como variables de entorno:
 - `NEXT_PUBLIC_SERVICE_ADDRESS`
 - `NEXT_PUBLIC_OPENING_HOURS`
 - `NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS` solo si hay credenciales confirmadas para publicar
-- `NEXT_PUBLIC_GOOGLE_MAPS_URL` cuando exista el perfil verificado
+- `NEXT_PUBLIC_GOOGLE_MAPS_URL`
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` cuando Search Console proporcione el token
 - `LEGAL_TAX_ID`
 - `NEXT_PUBLIC_GOOGLE_TAG_ID` solo si se usara medicion
@@ -72,7 +72,7 @@ NEXT_PUBLIC_LEGAL_ADDRESS=
 NEXT_PUBLIC_SERVICE_ADDRESS=Servicio exclusivamente a domicilio. No existe local abierto al publico.
 NEXT_PUBLIC_OPENING_HOURS=Horario de atencion: 10:00-21:00, con cita previa
 NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS=
-NEXT_PUBLIC_GOOGLE_MAPS_URL=
+NEXT_PUBLIC_GOOGLE_MAPS_URL=https://maps.app.goo.gl/ebmWQhwM8CENDJYv6
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 LEGAL_TAX_ID=Y7721001F
 NEXT_PUBLIC_GOOGLE_TAG_ID=
