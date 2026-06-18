@@ -94,7 +94,7 @@ img {
   }
 
   .logo-mark {
-    @apply grid h-20 w-16 shrink-0 place-items-center;
+    @apply grid h-20 w-20 shrink-0 place-items-center;
   }
 
   .section-shell {

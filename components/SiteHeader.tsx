@@ -28,8 +28,8 @@ export default function SiteHeader() {
               width={500}
               height={500}
               priority
-              sizes="44px"
-              className="h-full w-full object-contain"
+              sizes="80px"
+              className="h-full w-full scale-x-150 object-contain"
             />
           </span>
           <span>
