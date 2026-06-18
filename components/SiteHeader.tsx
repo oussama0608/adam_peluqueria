@@ -2,15 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ContactActions from "@/components/ContactActions";
+import HeaderNavLinks from "@/components/HeaderNavLinks";
 import { brandName, siteName } from "@/lib/site";
-
-const navItems = [
-  { href: "/servicios", label: "Servicios" },
-  { href: "/zonas", label: "Zonas" },
-  { href: "/sobre-adam", label: "Sobre Adam" },
-  { href: "/guias", label: "Guias" },
-  { href: "/contacto", label: "Contacto" },
-];
 
 export default function SiteHeader() {
   return (
@@ -42,37 +35,14 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label="Navegacion principal" className="hidden items-center gap-5 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-semibold text-[color:var(--muted)] hover:text-[color:var(--accent)]"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <HeaderNavLinks variant="desktop" />
 
         <div className="hidden sm:block">
           <ContactActions compact />
         </div>
       </div>
 
-      <nav
-        aria-label="Navegacion movil"
-        className="mx-auto grid w-full max-w-[22.5rem] grid-cols-2 gap-3 border-t border-[color:var(--line)] px-4 py-3 sm:hidden"
-      >
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-full border border-[color:var(--line)] px-3 py-2 text-center text-sm font-semibold text-[color:var(--heading)]"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
+      <HeaderNavLinks variant="mobile" />
     </header>
   );
 }
