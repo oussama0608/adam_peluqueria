@@ -13,8 +13,8 @@
   --muted: #667085;
   --border: #d8dde8;
   --focus-ring: rgba(198, 40, 53, 0.34);
-  --whatsapp: #075e54;
-  --whatsapp-hover: #064c44;
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1ebe5d;
   --shadow-sm: 0 12px 30px rgba(12, 41, 95, 0.08);
   --shadow-md: 0 20px 46px rgba(12, 41, 95, 0.12);
   --shadow-lg: 0 26px 64px rgba(12, 41, 95, 0.16);
@@ -118,11 +118,25 @@ img {
   }
 
   .section-shell {
-    @apply px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
+    @apply px-4 py-12 sm:px-6 sm:py-14 lg:px-8;
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(3rem, 6vw, 5rem);
   }
 
   main > section.section-shell:nth-of-type(even) {
     background: var(--surface);
+  }
+
+  main > section.section-shell.pt-0 {
+    padding-top: clamp(2.5rem, 5vw, 4rem) !important;
+  }
+
+  main > section.section-shell + section.section-shell {
+    border-top: 1px solid rgba(216, 221, 232, 0.54);
+  }
+
+  main > section.section-shell:first-child {
+    border-top: 0;
   }
 
   .section-shell > div {
@@ -191,15 +205,15 @@ img {
   .btn-whatsapp {
     @apply inline-flex min-h-[56px] max-w-full items-center justify-center gap-2 rounded-[16px] px-6 py-4 text-center text-base font-semibold;
     background: var(--whatsapp);
-    color: var(--background);
-    box-shadow: 0 16px 30px rgba(7, 94, 84, 0.18);
+    color: var(--foreground);
+    box-shadow: 0 16px 30px rgba(37, 211, 102, 0.22);
     max-width: min(100%, 22.5rem, calc(100vw - 2rem));
   }
 
   .btn-whatsapp:hover {
     transform: translateY(-1px);
     background: var(--whatsapp-hover);
-    box-shadow: 0 20px 38px rgba(7, 94, 84, 0.22);
+    box-shadow: 0 20px 38px rgba(37, 211, 102, 0.26);
   }
 
   .btn-secondary {
