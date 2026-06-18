@@ -29,7 +29,7 @@ export default function HeaderNavLinks({ variant }: HeaderNavLinksProps) {
       className={
         isDesktop
           ? "hidden items-center gap-2 lg:flex"
-          : "mx-auto grid w-full max-w-[22.5rem] grid-cols-2 gap-3 border-t border-[color:var(--line)] px-4 py-3 sm:hidden"
+          : "mx-auto grid w-full max-w-[22.5rem] grid-cols-2 gap-3 border-t border-[color:var(--surface)] px-4 py-3 sm:hidden"
       }
     >
       {navItems.map((item) => {
@@ -38,8 +38,8 @@ export default function HeaderNavLinks({ variant }: HeaderNavLinksProps) {
           ? "inline-flex min-h-10 items-center rounded-full px-3.5 py-2 text-sm font-semibold"
           : "rounded-full border px-3 py-2 text-center text-sm font-semibold";
         const stateClass = active
-          ? "border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.14)] text-[color:var(--accent-strong)] shadow-[inset_0_0_0_1px_rgba(197,160,89,0.22)]"
-          : "border-[color:var(--line)] text-[color:var(--muted)] hover:border-[color:var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] hover:text-[color:var(--accent)]";
+          ? "border-[color:var(--accent)] bg-[color:var(--accent)] text-[color:var(--background)]"
+          : "border-[color:var(--surface)] text-[color:var(--surface)] hover:border-[color:var(--background)] hover:bg-[color:var(--primary-hover)] hover:text-[color:var(--background)]";
 
         return (
           <Link

@@ -69,7 +69,7 @@ export default function ServicesPage() {
             />
             <div className="grid gap-4">
               {services.map((service) => (
-                <Link key={service.id} href={service.href} className="card hover:border-[color:var(--line-strong)]">
+                <Link key={service.id} href={service.href} className="card hover:border-[color:var(--accent)]">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">
@@ -97,7 +97,7 @@ export default function ServicesPage() {
             ].map((item) => (
               <article key={item} className="card">
                 <CheckIcon />
-                <p className="mt-4 text-sm font-semibold leading-7 text-[color:var(--heading)]">
+                <p className="mt-4 text-sm font-semibold leading-7 text-[color:var(--primary)]">
                   {item}
                 </p>
               </article>

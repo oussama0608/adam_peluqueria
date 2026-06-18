@@ -13,7 +13,7 @@ export default function ContactActions({ className = "", compact = false }: Cont
       <TrackedContactLink
         channel="whatsapp"
         href={whatsappUrl}
-        className={compact ? "btn-primary min-h-0 px-4 py-3 text-sm" : "btn-primary w-full sm:w-auto"}
+        className={compact ? "btn-whatsapp min-h-0 px-4 py-3 text-sm" : "btn-whatsapp w-full sm:w-auto"}
       >
         <WhatsAppIcon />
         WhatsApp

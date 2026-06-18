@@ -24,7 +24,7 @@ export const metadata = createMetadata({
   title: route.title,
   description: route.description,
   path: route.href,
-  image: "/adam-hero-profesional-blanco.png",
+  image: "/images/adam-hero-bilbao.png",
 });
 
 const useCases = [
@@ -77,32 +77,30 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative overflow-hidden rounded-[24px] border shadow-[var(--shadow-lg)]">
-                <div className="relative aspect-[9/16] bg-white">
-                  <Image
-                    src="/adam-hero-profesional-blanco.png"
-                    alt="Adam Messaoudi con traje, imagen profesional para el servicio de peluqueria a domicilio."
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 48vw"
-                    className="object-cover object-center"
-                  />
-                </div>
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[30rem] overflow-hidden bg-[color:var(--background)]">
+                <Image
+                  src="/images/adam-hero-bilbao.png"
+                  alt="Adam, peluquero y barbero a domicilio en Bilbao"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 92vw, 44vw"
+                  className="object-contain object-bottom"
+                />
               </div>
               <div className="mt-4 grid grid-cols-2 gap-4">
-                <div className="rounded-[18px] border bg-[rgba(255,255,255,0.03)] p-4">
+                <div className="stat-card">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">
                     Zona
                   </p>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-[color:var(--heading)]">
+                  <p className="mt-2 text-sm font-semibold leading-6 text-[color:var(--primary)]">
                     {serviceAreaSummary}
                   </p>
                 </div>
-                <div className="rounded-[18px] border bg-[rgba(255,255,255,0.03)] p-4">
+                <div className="stat-card">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">
                     Horario
                   </p>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-[color:var(--heading)]">
+                  <p className="mt-2 text-sm font-semibold leading-6 text-[color:var(--primary)]">
                     {openingHours}
                   </p>
                 </div>
@@ -199,7 +197,7 @@ export default function HomePage() {
                         className="object-cover"
                       />
                     </div>
-                    <figcaption className="bg-[rgba(255,255,255,0.03)] px-4 py-3 text-sm font-semibold text-[color:var(--heading)]">
+                    <figcaption className="image-caption px-4 py-3 text-sm font-semibold">
                       {image.caption}
                     </figcaption>
                   </figure>
@@ -217,11 +215,11 @@ export default function HomePage() {
                 title="La web queda preparada para conectarse con Google Maps."
                 description="Cuando el perfil este verificado, la URL podra mostrarse en contacto, footer y datos estructurados para mantener coherencia entre web y Perfil de Empresa en Google."
               />
-              <div className="mt-8 rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6">
+              <div className="soft-panel mt-8">
                 {googleMapsUrl ? (
                   <a
                     href={googleMapsUrl}
-                    className="inline-flex items-center gap-2 font-semibold text-[color:var(--heading)] hover:text-[color:var(--accent)]"
+                    className="inline-flex items-center gap-2 font-semibold text-[color:var(--primary)] hover:text-[color:var(--accent)]"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -246,9 +244,9 @@ export default function HomePage() {
                   <Link
                     key={post.href}
                     href={post.href}
-                    className="rounded-[18px] border border-[color:var(--line)] p-4 hover:border-[color:var(--line-strong)]"
+                    className="stat-card hover:border-[color:var(--accent)]"
                   >
-                    <span className="text-sm font-semibold text-[color:var(--heading)]">
+                    <span className="text-sm font-semibold text-[color:var(--primary)]">
                       {post.title}
                     </span>
                     <span className="mt-2 block text-sm leading-6 text-[color:var(--muted)]">
@@ -275,7 +273,7 @@ export default function HomePage() {
         </section>
 
         <section className="section-shell pt-0">
-          <div className="mx-auto max-w-6xl rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.1)] p-6 sm:p-8">
+          <div className="soft-panel mx-auto max-w-6xl">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <h2 className="text-3xl font-semibold">Consulta zona, horario y precio antes de reservar.</h2>

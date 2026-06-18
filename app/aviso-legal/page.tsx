@@ -46,9 +46,9 @@ export default function LegalPage() {
               servicio de peluqueria y barberia exclusivamente a domicilio.
             </p>
 
-            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
+            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--foreground)]">
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Titular del sitio web
                 </h2>
                 <ul className="mt-4 space-y-2">
@@ -65,13 +65,13 @@ export default function LegalPage() {
                   </li>
                   <li>
                     <strong>Telefono:</strong>{" "}
-                    <a href={phoneUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                    <a href={phoneUrl} className="font-medium text-[color:var(--primary)] hover:text-[color:var(--accent)]">
                       {phoneDisplay}
                     </a>
                   </li>
                   <li>
                     <strong>WhatsApp:</strong>{" "}
-                    <a href={whatsappUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                    <a href={whatsappUrl} className="font-medium text-[color:var(--primary)] hover:text-[color:var(--accent)]">
                       {phoneDisplay}
                     </a>
                   </li>
@@ -88,7 +88,7 @@ export default function LegalPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Objeto del sitio</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Objeto del sitio</h2>
                 <p className="mt-4">
                   La web informa sobre servicios de peluqueria y barberia a domicilio en Bilbao y
                   alrededores, y facilita contacto por telefono, WhatsApp o email. No existe local
@@ -97,7 +97,7 @@ export default function LegalPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Condiciones del servicio
                 </h2>
                 <p className="mt-4">
@@ -110,7 +110,7 @@ export default function LegalPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Propiedad intelectual
                 </h2>
                 <p className="mt-4">
@@ -121,7 +121,7 @@ export default function LegalPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Responsabilidad</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Responsabilidad</h2>
                 <p className="mt-4">
                   El titular procura mantener la informacion actualizada, pero puede haber cambios
                   en disponibilidad, precios, zonas o condiciones. El usuario debe confirmar los
@@ -130,7 +130,7 @@ export default function LegalPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Legislacion aplicable</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Legislacion aplicable</h2>
                 <p className="mt-4">
                   Este sitio se rige por la normativa espanola que resulte de aplicacion.
                 </p>

@@ -40,8 +40,8 @@ export default function ServiceDetailPage({ service, children }: ServiceDetailPa
                 <p className="hero-copy">{service.description}</p>
                 <div className="mt-7 grid gap-3 sm:grid-cols-3">
                   {[service.price, service.duration, service.audience].map((item) => (
-                    <div key={item} className="rounded-[18px] border bg-[rgba(255,255,255,0.03)] p-4">
-                      <p className="text-sm font-semibold leading-6 text-[color:var(--heading)]">
+                    <div key={item} className="stat-card">
+                      <p className="text-sm font-semibold leading-6 text-[color:var(--primary)]">
                         {item}
                       </p>
                     </div>
@@ -50,7 +50,7 @@ export default function ServiceDetailPage({ service, children }: ServiceDetailPa
                 <ContactActions className="mt-8" />
               </div>
 
-              <div className="relative overflow-hidden rounded-[24px] border shadow-[var(--shadow-md)]">
+              <div className="hero-media shadow-[var(--shadow-md)]">
                 <div className="relative aspect-[4/5]">
                   <Image
                     src={service.image}
@@ -94,17 +94,17 @@ export default function ServiceDetailPage({ service, children }: ServiceDetailPa
             </div>
 
             <div>
-              <h2 className="text-3xl font-semibold text-[color:var(--heading)]">Que incluye</h2>
+              <h2 className="text-3xl font-semibold text-[color:var(--primary)]">Que incluye</h2>
               <ul className="mt-6 grid gap-4">
                 {service.includes.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm font-medium leading-7">
                     <CheckIcon />
-                    <span className="text-[color:var(--heading)]">{item}</span>
+                    <span className="text-[color:var(--primary)]">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-8 rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6">
+              <div className="soft-panel mt-8">
                 <h2 className="text-2xl font-semibold">Notas antes de reservar</h2>
                 <ul className="mt-4 grid gap-3">
                   {service.notes.map((note) => (

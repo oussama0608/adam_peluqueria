@@ -45,9 +45,9 @@ export default function PrivacyPage() {
               con Adam Peluqueria a domicilio por WhatsApp, telefono o email.
             </p>
 
-            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
+            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--foreground)]">
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Responsable del tratamiento
                 </h2>
                 <ul className="mt-4 space-y-2">
@@ -64,13 +64,13 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <strong>Telefono:</strong>{" "}
-                    <a href={phoneUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                    <a href={phoneUrl} className="font-medium text-[color:var(--primary)] hover:text-[color:var(--accent)]">
                       {phoneDisplay}
                     </a>
                   </li>
                   <li>
                     <strong>WhatsApp:</strong>{" "}
-                    <a href={whatsappUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                    <a href={whatsappUrl} className="font-medium text-[color:var(--primary)] hover:text-[color:var(--accent)]">
                       {phoneDisplay}
                     </a>
                   </li>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Datos tratados</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Datos tratados</h2>
                 <p className="mt-4">
                   Si contactas por WhatsApp, telefono o email, pueden tratarse datos como nombre,
                   telefono, contenido del mensaje, ubicacion aproximada de servicio, horario
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Finalidad</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Finalidad</h2>
                 <p className="mt-4">
                   Los datos se usan para responder consultas, confirmar disponibilidad, organizar
                   citas, comunicar cambios relacionados con el servicio y atender obligaciones
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Base juridica</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Base juridica</h2>
                 <p className="mt-4">
                   La base juridica es el consentimiento de la persona que inicia el contacto y, si
                   se avanza hacia una reserva, la aplicacion de medidas precontractuales solicitadas
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Conservacion</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Conservacion</h2>
                 <p className="mt-4">
                   Los datos se conservaran durante el tiempo necesario para gestionar la consulta o
                   cita y, posteriormente, durante los plazos exigidos por obligaciones legales si
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Destinatarios</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Destinatarios</h2>
                 <p className="mt-4">
                   No se cederan datos a terceros salvo obligacion legal. Si usas WhatsApp, la
                   comunicacion queda sujeta tambien a las condiciones y politicas de ese proveedor.
@@ -128,7 +128,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Derechos</h2>
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">Derechos</h2>
                 <p className="mt-4">
                   Puedes solicitar acceso, rectificacion, supresion, oposicion, limitacion o
                   portabilidad escribiendo a {contactEmail} o usando los canales de contacto
@@ -137,14 +137,14 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Analitica, publicidad y medicion de contactos
                 </h2>
                 <p className="mt-4">
                   La web esta preparada para medir clics en WhatsApp y telefono. Las etiquetas de
                   analitica o publicidad no esenciales solo se cargan si la persona acepta cookies
                   mediante el banner de consentimiento. Consulta la{" "}
-                  <Link href="/cookies" className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                  <Link href="/cookies" className="font-medium text-[color:var(--primary)] hover:text-[color:var(--accent)]">
                     politica de cookies
                   </Link>{" "}
                   para mas informacion.

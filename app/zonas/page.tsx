@@ -71,7 +71,7 @@ export default function ZonasPage() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 rounded-[16px] border p-4">
                     <CheckIcon />
-                    <span className="text-sm font-semibold text-[color:var(--heading)]">{item}</span>
+                    <span className="text-sm font-semibold text-[color:var(--primary)]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -102,7 +102,7 @@ export default function ZonasPage() {
                 "Actualizar Google Business Profile con el area de servicio correcta cuando este verificado.",
               ].map((item) => (
                 <div key={item} className="card">
-                  <p className="text-sm font-semibold leading-7 text-[color:var(--heading)]">{item}</p>
+                  <p className="text-sm font-semibold leading-7 text-[color:var(--primary)]">{item}</p>
                 </div>
               ))}
             </div>
@@ -110,7 +110,7 @@ export default function ZonasPage() {
         </section>
 
         <section className="section-shell pt-0">
-          <div className="mx-auto max-w-6xl rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.1)] p-6 sm:p-8">
+          <div className="soft-panel mx-auto max-w-6xl">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <h2 className="text-3xl font-semibold">No sabes si tu zona entra?</h2>

@@ -85,8 +85,8 @@ export default function GuidesPage() {
                 "Que preguntar antes de contratar peluqueria para una residencia.",
                   "Peluqueria en hoteles: que datos debe confirmar el cliente.",
               ].map((item) => (
-                <div key={item} className="rounded-[18px] border p-4">
-                  <p className="text-sm font-semibold leading-7 text-[color:var(--heading)]">
+                <div key={item} className="stat-card">
+                  <p className="text-sm font-semibold leading-7 text-[color:var(--primary)]">
                     {item}
                   </p>
                 </div>

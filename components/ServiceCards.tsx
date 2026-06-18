@@ -28,7 +28,7 @@ export default function ServiceCards({ limit }: ServiceCardsProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">
               {service.eyebrow}
             </p>
-            <h3 className="mt-3 text-3xl leading-tight text-[color:var(--heading)]">
+            <h3 className="mt-3 text-3xl leading-tight text-[color:var(--primary)]">
               {service.shortTitle}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
@@ -38,7 +38,7 @@ export default function ServiceCards({ limit }: ServiceCardsProps) {
               {[service.price, service.duration].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm font-medium">
                   <CheckIcon />
-                  <span className="text-[color:var(--heading)]">{item}</span>
+                  <span className="text-[color:var(--primary)]">{item}</span>
                 </li>
               ))}
             </ul>

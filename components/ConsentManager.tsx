@@ -89,10 +89,10 @@ export default function ConsentManager() {
   }
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-3xl rounded-[18px] border border-[color:var(--line-strong)] bg-[rgba(10,10,10,0.96)] p-4 shadow-[var(--shadow-md)] backdrop-blur sm:bottom-5 sm:p-5">
+    <div className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-3xl rounded-[18px] border border-[color:var(--border)] bg-[color:var(--background)] p-4 shadow-[var(--shadow-md)] sm:bottom-5 sm:p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-[color:var(--heading)]">
+          <p className="text-sm font-semibold text-[color:var(--primary)]">
             Cookies y medicion de {siteName}
           </p>
           <p className="mt-1 text-sm leading-6 text-[color:var(--muted)]">

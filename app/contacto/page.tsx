@@ -67,7 +67,7 @@ export default function ContactPage() {
                 Canal recomendado para enviar zona, servicio y disponibilidad. Tambien puedes
                 adjuntar una foto de referencia si ayuda a explicar el corte.
               </p>
-              <TrackedContactLink channel="whatsapp" href={whatsappUrl} className="btn-primary mt-6">
+              <TrackedContactLink channel="whatsapp" href={whatsappUrl} className="btn-whatsapp mt-6">
                 <WhatsAppIcon />
                 Escribir por WhatsApp
               </TrackedContactLink>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 <div key={item} className="card">
                   <div className="flex items-start gap-3">
                     <CheckIcon />
-                    <p className="text-sm font-semibold leading-7 text-[color:var(--heading)]">
+                    <p className="text-sm font-semibold leading-7 text-[color:var(--primary)]">
                       {item}
                     </p>
                   </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
         </section>
 
         <section className="section-shell pt-0">
-          <div className="mx-auto max-w-6xl rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6 sm:p-8">
+          <div className="soft-panel mx-auto max-w-6xl">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">

@@ -100,7 +100,7 @@ export default function PrepareHomeHaircutGuidePage() {
         </section>
 
         <section className="section-shell pt-0">
-          <div className="mx-auto max-w-4xl rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6 sm:p-8">
+          <div className="soft-panel mx-auto max-w-4xl">
             <h2 className="text-3xl font-semibold">Checklist antes de escribir</h2>
             <ul className="mt-6 grid gap-4">
               {[
@@ -112,7 +112,7 @@ export default function PrepareHomeHaircutGuidePage() {
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm font-semibold leading-7">
                   <CheckIcon />
-                  <span className="text-[color:var(--heading)]">{item}</span>
+                  <span className="text-[color:var(--primary)]">{item}</span>
                 </li>
               ))}
             </ul>

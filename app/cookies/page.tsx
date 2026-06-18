@@ -34,9 +34,9 @@ export default function CookiesPage() {
               el servicio o cuando la persona acepta medicion no esencial.
             </p>
 
-            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
+            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--foreground)]">
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Cookies tecnicas
                 </h2>
                 <p className="mt-4">
@@ -46,7 +46,7 @@ export default function CookiesPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Analitica y publicidad
                 </h2>
                 <p className="mt-4">
@@ -62,7 +62,7 @@ export default function CookiesPage() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                <h2 className="text-xl font-semibold text-[color:var(--primary)]">
                   Como cambiar tu eleccion
                 </h2>
                 <p className="mt-4">

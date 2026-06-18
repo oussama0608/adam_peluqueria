@@ -44,7 +44,7 @@ export default function SobreAdamPage() {
                 </p>
                 <ContactActions className="mt-8" />
               </div>
-              <div className="relative overflow-hidden rounded-[24px] border shadow-[var(--shadow-md)]">
+              <div className="hero-media shadow-[var(--shadow-md)]">
                 <div className="relative aspect-[4/5]">
                   <Image
                     src="/3.jpeg"
@@ -77,7 +77,7 @@ export default function SobreAdamPage() {
                 <article key={item} className="card">
                   <div className="flex items-start gap-3">
                     <CheckIcon />
-                    <p className="text-sm font-semibold leading-7 text-[color:var(--heading)]">
+                    <p className="text-sm font-semibold leading-7 text-[color:var(--primary)]">
                       {item}
                     </p>
                   </div>
@@ -89,7 +89,7 @@ export default function SobreAdamPage() {
 
         <section className="section-shell pt-0">
           <div className="mx-auto max-w-6xl">
-            <div className="rounded-[24px] border border-[color:var(--line-strong)] bg-[rgba(197,160,89,0.08)] p-6 sm:p-8">
+            <div className="soft-panel">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">
                 Datos confirmados
               </p>
@@ -101,7 +101,7 @@ export default function SobreAdamPage() {
                   openingHours,
                   "No existe local abierto al publico.",
                 ].map((item) => (
-                  <div key={item} className="rounded-[18px] border bg-[rgba(10,10,10,0.35)] p-4">
+                  <div key={item} className="stat-card">
                     <p className="text-sm leading-7 text-[color:var(--muted)]">{item}</p>
                   </div>
                 ))}
