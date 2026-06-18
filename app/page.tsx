@@ -24,7 +24,7 @@ export const metadata = createMetadata({
   title: route.title,
   description: route.description,
   path: route.href,
-  image: "/1.jpeg",
+  image: "/adam-hero-profesional-blanco.png",
 });
 
 const useCases = [
@@ -78,14 +78,14 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="relative overflow-hidden rounded-[24px] border shadow-[var(--shadow-lg)]">
-                <div className="relative aspect-[4/5]">
+                <div className="relative aspect-[9/16] bg-white">
                   <Image
-                    src="/1.jpeg"
-                    alt="Adam realizando un servicio de barberia con material de trabajo."
+                    src="/adam-hero-profesional-blanco.png"
+                    alt="Adam Messaoudi con traje, imagen profesional para el servicio de peluqueria a domicilio."
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 48vw"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
               </div>
