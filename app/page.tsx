@@ -259,6 +259,46 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section-shell pt-0" id="resenas">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <SectionHeading
+                eyebrow="Reseñas"
+                title="Tu experiencia puede ayudar a otras personas a decidir."
+                description="Si ya has reservado un servicio con Adam, una reseña real en Google Maps ayuda a que nuevos clientes entiendan como funciona la cita a domicilio."
+              />
+              {googleMapsUrl ? (
+                <a
+                  href={googleMapsUrl}
+                  className="btn-primary mt-7"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Dejar reseña en Google Maps
+                </a>
+              ) : (
+                <p className="mt-7 text-sm leading-7 text-[color:var(--muted)]">
+                  El enlace para dejar reseñas se activara cuando el perfil de Google Maps este
+                  disponible.
+                </p>
+              )}
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                "Cuenta que servicio recibiste y en que contexto: casa, residencia, hotel, oficina o evento.",
+                "Explica si la comunicacion, la puntualidad y la organizacion de la cita fueron claras.",
+                "Evita publicar datos personales, direcciones completas o informacion privada.",
+              ].map((item) => (
+                <article key={item} className="stat-card">
+                  <p className="text-sm font-semibold leading-7 text-[color:var(--primary)]">
+                    {item}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section-shell pt-0">
           <div className="mx-auto max-w-4xl">
             <SectionHeading
