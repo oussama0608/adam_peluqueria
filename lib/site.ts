@@ -248,8 +248,8 @@ export const services: Service[] = [
     price: seniorCutAndBeardPrice,
     duration: "40-70 min aprox.",
     audience: "Personas mayores, movilidad reducida y familiares cuidadores.",
-    image: "/7.jpeg",
-    imageAlt: "Corte de pelo corto como referencia de un servicio para cliente adulto.",
+    image: "/8.jpeg",
+    imageAlt: "Detalle de maquina de corte durante la preparacion de un servicio de barberia.",
     includes: [
       "Ritmo de trabajo pausado y explicacion clara antes de empezar",
       "Corte clasico o mantenimiento sencillo",
@@ -391,9 +391,9 @@ export const galleryImages = [
     caption: "Detalle y preparacion",
   },
   {
-    src: "/7.jpeg",
-    alt: "Corte corto masculino terminado como referencia de acabado.",
-    caption: "Acabado limpio",
+    src: "/8.jpeg",
+    alt: "Detalle de maquina de corte durante la preparacion de un servicio de barberia.",
+    caption: "Material de trabajo",
   },
 ];
 
