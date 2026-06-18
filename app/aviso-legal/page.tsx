@@ -1,142 +1,137 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbsJsonLd, createMetadata } from "@/lib/seo";
 import {
   contactEmail,
-  isPrelaunch,
   legalAddress,
-  ownerName,
+  legalName,
   phoneDisplay,
   phoneUrl,
+  siteRoutes,
   taxId,
   taxIdLabel,
   whatsappUrl,
 } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Aviso legal | Adam: Barberia & Cuidado en Casa",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+const route = siteRoutes.find((item) => item.href === "/aviso-legal")!;
+
+export const metadata = createMetadata({
+  title: route.title,
+  description: route.description,
+  path: route.href,
+});
+
+const breadcrumbs = [
+  { href: "/", label: "Inicio" },
+  { href: "/aviso-legal", label: "Aviso legal" },
+];
 
 export default function LegalPage() {
   return (
-    <main className="section-shell">
-      <div className="mx-auto max-w-3xl">
-        <div className="card">
-          <span className="eyebrow">Informacion legal provisional</span>
-          <h1 className="mt-5 text-4xl font-semibold">Aviso legal</h1>
-          <p className="mt-5 text-base leading-8">
-            Este sitio web se encuentra en fase de pruebas y validacion previa al lanzamiento
-            definitivo. La informacion incluida en esta pagina tiene caracter provisional y debe
-            revisarse antes de iniciar actividad comercial estable o campanas de pago.
-          </p>
+    <>
+      <JsonLd data={breadcrumbsJsonLd(breadcrumbs.map((item) => ({ name: item.label, href: item.href })))} />
 
-          <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
-            <section>
-              <h2 className="text-xl font-semibold text-[color:var(--heading)]">
-                Titular del sitio web
-              </h2>
-              <ul className="mt-4 space-y-2">
-                <li>
-                  <strong>Nombre:</strong> {ownerName}
-                </li>
-                {taxId ? (
+      <main id="contenido" className="section-shell">
+        <div className="mx-auto max-w-3xl">
+          <Breadcrumbs items={breadcrumbs} />
+          <div className="card">
+            <span className="eyebrow">Informacion legal</span>
+            <h1 className="mt-5 text-4xl font-semibold">Aviso legal</h1>
+            <p className="mt-5 text-base leading-8">
+              Esta pagina recoge los datos legales del sitio web. Algunos campos quedan marcados
+              como TODO porque deben confirmarse con informacion real del titular antes de publicar
+              la version definitiva.
+            </p>
+
+            <div className="mt-8 space-y-8 text-sm leading-7 text-[color:var(--text)]">
+              <section>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                  Titular del sitio web
+                </h2>
+                <ul className="mt-4 space-y-2">
+                  <li>
+                    <strong>Nombre legal:</strong> {legalName}
+                  </li>
                   <li>
                     <strong>{taxIdLabel}:</strong> {taxId}
                   </li>
-                ) : null}
-                <li>
-                  <strong>Direccion facilitada:</strong> {legalAddress}
-                </li>
-                <li>
-                  <strong>Telefono de contacto:</strong>{" "}
-                  <a
-                    href={phoneUrl}
-                    className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]"
-                  >
-                    {phoneDisplay}
-                  </a>
-                </li>
-                <li>
-                  <strong>WhatsApp:</strong>{" "}
-                  <TrackedWhatsAppLink
-                    href={whatsappUrl}
-                    className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]"
-                  >
-                    {phoneDisplay}
-                  </TrackedWhatsAppLink>
-                </li>
-                <li>
-                  <strong>Correo electronico:</strong>{" "}
-                  {contactEmail || "Pendiente de definir antes del lanzamiento publico."}
-                </li>
-              </ul>
-            </section>
+                  <li>
+                    <strong>Direccion legal:</strong> {legalAddress}
+                  </li>
+                  <li>
+                    <strong>Telefono:</strong>{" "}
+                    <a href={phoneUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                      {phoneDisplay}
+                    </a>
+                  </li>
+                  <li>
+                    <strong>WhatsApp:</strong>{" "}
+                    <a href={whatsappUrl} className="font-medium text-[color:var(--heading)] hover:text-[color:var(--accent)]">
+                      {phoneDisplay}
+                    </a>
+                  </li>
+                  <li>
+                    <strong>Email:</strong> {contactEmail}
+                  </li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[color:var(--heading)]">Objeto del sitio</h2>
-              <p className="mt-4">
-                Esta web tiene como finalidad informar sobre un posible servicio de peluqueria y
-                barberia a domicilio en Bilbao y facilitar un primer contacto directo por telefono o
-                WhatsApp. En esta fase no existe contratacion automatica ni pasarela de pago dentro
-                del sitio.
-              </p>
-            </section>
-
-            {isPrelaunch ? (
               <section>
-                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
-                  Estado actual del proyecto
-                </h2>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Objeto del sitio</h2>
                 <p className="mt-4">
-                  Segun la informacion facilitada por el titular, el proyecto esta actualmente en
-                  fase de pruebas y todavia no se ha comunicado alta como autonomo ni la existencia
-                  de una sociedad para esta actividad. Antes del lanzamiento comercial definitivo,
-                  este aviso legal debe completarse con el domicilio completo, el correo electronico
-                  de contacto y los datos fiscales o mercantiles que resulten aplicables. Por
-                  prudencia, esos datos no se muestran aun en la version publica de pruebas.
+                  La web informa sobre servicios de peluqueria y barberia a domicilio en Bilbao y
+                  municipios cercanos bajo confirmacion, y facilita contacto por telefono o
+                  WhatsApp. No existe contratacion automatica ni pasarela de pago en el sitio.
                 </p>
               </section>
-            ) : null}
 
-            <section>
-              <h2 className="text-xl font-semibold text-[color:var(--heading)]">
-                Propiedad intelectual
-              </h2>
-              <p className="mt-4">
-                Los textos, disenos, imagenes y demas contenidos de esta web estan protegidos por la
-                normativa aplicable. No se permite su reproduccion, distribucion o transformacion
-                sin autorizacion previa del titular, salvo en los casos legalmente permitidos.
-              </p>
-            </section>
+              <section>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                  Condiciones del servicio
+                </h2>
+                <p className="mt-4">
+                  Los precios, horarios, desplazamientos y condiciones se confirman antes de cerrar
+                  cada cita. TODO: confirmar tarifas definitivas, suplementos de desplazamiento,
+                  horarios y municipios atendidos de forma habitual.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[color:var(--heading)]">Responsabilidad</h2>
-              <p className="mt-4">
-                El titular procurara que la informacion del sitio sea correcta y este actualizada,
-                pero no garantiza la ausencia de errores o cambios posteriores. El uso de la web se
-                realiza bajo la responsabilidad de cada persona usuaria.
-              </p>
-            </section>
+              <section>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">
+                  Propiedad intelectual
+                </h2>
+                <p className="mt-4">
+                  Los textos, imagenes, disenos y contenidos de esta web pertenecen a su titular o
+                  se usan con autorizacion. No se permite su reproduccion, distribucion o
+                  transformacion sin permiso previo, salvo en los casos legalmente permitidos.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[color:var(--heading)]">Legislacion aplicable</h2>
-              <p className="mt-4">
-                Este sitio se rige, con caracter general, por la normativa espanola que resulte de
-                aplicacion.
-              </p>
-            </section>
+              <section>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Responsabilidad</h2>
+                <p className="mt-4">
+                  El titular procura mantener la informacion actualizada, pero puede haber cambios
+                  en disponibilidad, precios, zonas o condiciones. El usuario debe confirmar los
+                  datos esenciales antes de contratar o reservar cualquier servicio.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-semibold text-[color:var(--heading)]">Legislacion aplicable</h2>
+                <p className="mt-4">
+                  Este sitio se rige por la normativa espanola que resulte de aplicacion.
+                </p>
+              </section>
+            </div>
+
+            <Link href="/" className="btn-secondary mt-8">
+              Volver al inicio
+            </Link>
           </div>
-
-          <Link href="/" className="btn-secondary mt-8">
-            Volver a la landing
-          </Link>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

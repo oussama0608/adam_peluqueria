@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import Script from "next/script";
 
+import ConsentManager from "@/components/ConsentManager";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
-import { seoTitle, siteDescription, siteName, siteUrl } from "@/lib/site";
-
-const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
+import { businessDescription, googleSiteVerification, siteName, siteUrl } from "@/lib/site";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,21 +22,17 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: seoTitle,
-  description: siteDescription,
+  title: {
+    default: "Peluqueria y barberia a domicilio en Bilbao | Adam",
+    template: "%s",
+  },
+  description: businessDescription,
   applicationName: siteName,
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
-  keywords: [
-    "barberia premium a domicilio en Bilbao",
-    "peluqueria a domicilio Bilbao centro",
-    "corte ejecutivo a domicilio Bilbao",
-    "barberia para mayores en Bilbao",
-    "servicio peluqueria oficina Bilbao",
-  ],
   alternates: {
     canonical: "/",
   },
@@ -44,14 +40,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName,
-    title: seoTitle,
-    description: siteDescription,
+    title: "Peluqueria y barberia a domicilio en Bilbao | Adam",
+    description: businessDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: seoTitle,
-    description: siteDescription,
+    title: "Peluqueria y barberia a domicilio en Bilbao | Adam",
+    description: businessDescription,
   },
+  verification: googleSiteVerification ? { google: googleSiteVerification } : undefined,
   robots: {
     index: true,
     follow: true,
@@ -71,25 +68,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <head>
-        {googleTagId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-tag" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${googleTagId}');
-              `}
-            </Script>
-          </>
-        ) : null}
-      </head>
-      <body className={`${manrope.variable} ${cormorant.variable} font-sans`}>{children}</body>
+      <body className={`${manrope.variable} ${cormorant.variable} font-sans`}>
+        <a className="skip-link" href="#contenido">
+          Saltar al contenido
+        </a>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <ConsentManager />
+      </body>
     </html>
   );
 }

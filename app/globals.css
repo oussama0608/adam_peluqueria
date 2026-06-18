@@ -22,9 +22,11 @@ html {
   scroll-behavior: smooth;
   background: var(--background);
   color-scheme: dark;
+  overflow-x: clip;
 }
 
 body {
+  max-width: 100vw;
   min-height: 100vh;
   font-family: var(--font-body), sans-serif;
   background:
@@ -32,7 +34,12 @@ body {
     radial-gradient(circle at left 10%, rgba(197, 160, 89, 0.08), transparent 28%),
     linear-gradient(180deg, #0a0a0a 0%, #090909 100%);
   color: var(--text);
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
 }
 
 ::selection {
@@ -43,6 +50,7 @@ body {
 @layer base {
   * {
     border-color: var(--line);
+    min-width: 0;
   }
 
   body {
@@ -54,9 +62,8 @@ body {
   h3,
   h4 {
     font-family: var(--font-display), serif;
-    @apply tracking-tight;
     color: var(--heading);
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
   }
 
   p,
@@ -68,14 +75,30 @@ body {
     @apply transition-all duration-300;
   }
 
+  strong {
+    color: var(--heading);
+  }
+
   summary::-webkit-details-marker {
     display: none;
   }
 }
 
 @layer components {
+  .skip-link {
+    @apply fixed left-4 top-4 z-[80] -translate-y-24 rounded-lg bg-[color:var(--accent)] px-4 py-3 text-sm font-semibold text-black transition;
+  }
+
+  .skip-link:focus {
+    @apply translate-y-0 outline-none;
+  }
+
   .section-shell {
     @apply px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
+  }
+
+  .section-shell > div {
+    width: 100%;
   }
 
   .section-title {
@@ -87,13 +110,16 @@ body {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] sm:text-xs;
+    @apply inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] sm:text-xs;
     background: rgba(255, 255, 255, 0.04);
     color: var(--accent);
+    line-height: 1.45;
+    max-width: min(100%, 22.5rem, calc(100vw - 2rem));
+    white-space: normal;
   }
 
   .card {
-    @apply rounded-[30px] border p-6 sm:p-8;
+    @apply rounded-[24px] border p-6 sm:p-8;
     background:
       linear-gradient(155deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
       rgba(10, 10, 10, 0.9);
@@ -102,7 +128,7 @@ body {
   }
 
   .surface-panel {
-    @apply rounded-[32px] border p-6 sm:p-8;
+    @apply rounded-[24px] border p-6 sm:p-8;
     background:
       linear-gradient(160deg, rgba(197, 160, 89, 0.12), rgba(255, 255, 255, 0.02)),
       rgba(10, 10, 10, 0.9);
@@ -110,17 +136,19 @@ body {
   }
 
   .info-pill {
-    @apply inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium;
+    @apply inline-flex max-w-full items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium;
     background: rgba(255, 255, 255, 0.04);
     color: var(--heading);
     backdrop-filter: blur(12px);
+    max-width: min(100%, 22.5rem, calc(100vw - 2rem));
   }
 
   .btn-primary {
-    @apply inline-flex min-h-[58px] items-center justify-center gap-2 rounded-[18px] px-6 py-4 text-base font-semibold;
+    @apply inline-flex min-h-[56px] max-w-full items-center justify-center gap-2 rounded-[16px] px-6 py-4 text-center text-base font-semibold;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
     color: #120f09;
     box-shadow: 0 18px 38px rgba(197, 160, 89, 0.22);
+    max-width: min(100%, 22.5rem, calc(100vw - 2rem));
   }
 
   .btn-primary:hover {
@@ -135,11 +163,12 @@ body {
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-[58px] items-center justify-center gap-2 rounded-[18px] border px-6 py-4 text-base font-semibold;
+    @apply inline-flex min-h-[56px] max-w-full items-center justify-center gap-2 rounded-[16px] border px-6 py-4 text-center text-base font-semibold;
     background: rgba(255, 255, 255, 0.03);
     border-color: var(--line-strong);
     color: var(--heading);
     backdrop-filter: blur(12px);
+    max-width: min(100%, 22.5rem, calc(100vw - 2rem));
   }
 
   .btn-secondary:hover {
@@ -150,6 +179,55 @@ body {
   .btn-secondary:focus-visible {
     outline: 3px solid rgba(197, 160, 89, 0.18);
     outline-offset: 3px;
+  }
+
+  .hero-title {
+    @apply text-[2.65rem] font-semibold leading-[1.02] text-[color:var(--heading)] sm:text-6xl lg:text-7xl;
+    max-width: min(100%, 22.5rem, calc(100vw - 2rem));
+    overflow-wrap: break-word;
+  }
+
+  .hero-copy {
+    @apply mt-6 max-w-3xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl;
+    max-width: min(22.5rem, calc(100vw - 2rem));
+  }
+
+  @media (min-width: 640px) {
+    .eyebrow,
+    .info-pill,
+    .btn-primary,
+    .btn-secondary,
+    .hero-title {
+      max-width: min(100%, calc(100vw - 3rem));
+    }
+
+    .hero-copy {
+      max-width: min(48rem, calc(100vw - 3rem));
+    }
+  }
+
+  .content-block {
+    @apply text-base leading-8 text-[color:var(--muted)];
+  }
+
+  .prose-local {
+    @apply space-y-5 text-base leading-8 text-[color:var(--muted)];
+  }
+
+  .prose-local h2 {
+    @apply pt-6 text-3xl font-semibold leading-tight text-[color:var(--heading)] sm:text-4xl;
+  }
+
+  .prose-local h3 {
+    @apply pt-4 text-2xl font-semibold leading-tight text-[color:var(--heading)];
+  }
+
+  .prose-local ul {
+    @apply space-y-3;
+  }
+
+  .prose-local li {
+    @apply leading-7;
   }
 }
 

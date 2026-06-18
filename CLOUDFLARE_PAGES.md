@@ -11,7 +11,7 @@ Es un buen dominio para lanzar ya:
 - es corto
 - suena a marca
 - es facil de recordar
-- encaja bien con Google Ads
+- encaja bien con busqueda local, Google Maps y Google Business Profile
 
 ## Donde comprarlo
 
@@ -50,14 +50,34 @@ Rellena estos datos en Cloudflare Pages como variables de entorno:
 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_CONTACT_EMAIL`
-- `LEGAL_TAX_ID` solo cuando el proyecto ya no este en fase de pruebas
+- `NEXT_PUBLIC_LEGAL_NAME`
+- `NEXT_PUBLIC_LEGAL_ADDRESS`
+- `NEXT_PUBLIC_SERVICE_ADDRESS`
+- `NEXT_PUBLIC_OPENING_HOURS`
+- `NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS`
+- `NEXT_PUBLIC_GOOGLE_MAPS_URL` cuando exista el perfil verificado
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` cuando Search Console proporcione el token
+- `LEGAL_TAX_ID`
+- `NEXT_PUBLIC_GOOGLE_TAG_ID` solo si se usara medicion
+- `NEXT_PUBLIC_GOOGLE_WHATSAPP_CONVERSION_ID` solo si se usara Google Ads
+- `NEXT_PUBLIC_GOOGLE_PHONE_CONVERSION_ID` solo si se usara Google Ads
 
 Ejemplo:
 
 ```txt
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
 NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
+NEXT_PUBLIC_LEGAL_NAME=
+NEXT_PUBLIC_LEGAL_ADDRESS=
+NEXT_PUBLIC_SERVICE_ADDRESS=Servicio a domicilio con base operativa en Bilbao
+NEXT_PUBLIC_OPENING_HOURS=
+NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS=
+NEXT_PUBLIC_GOOGLE_MAPS_URL=
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 LEGAL_TAX_ID=
+NEXT_PUBLIC_GOOGLE_TAG_ID=
+NEXT_PUBLIC_GOOGLE_WHATSAPP_CONVERSION_ID=
+NEXT_PUBLIC_GOOGLE_PHONE_CONVERSION_ID=
 ```
 
 ## Opcion A: despliegue recomendado con GitHub
@@ -167,10 +187,14 @@ Cuando tengas el dominio:
 - Dominio principal: `adampeluqueria.com`
 - Redireccion opcional: `www.adampeluqueria.com` al dominio principal
 
-## Que revisar antes de lanzar Google Ads
+## Que revisar antes de lanzar SEO local y Google Business Profile
 
 1. Que el telefono y WhatsApp respondan.
 2. Que el dominio final este puesto en `NEXT_PUBLIC_SITE_URL`.
 3. Que haya un email real de contacto.
-4. Que el aviso legal y la privacidad esten actualizados cuando dejes de estar en pruebas.
-5. Que no actives tags de Google Ads o analytics sin revisar cookies y consentimiento.
+4. Que el aviso legal, privacidad y cookies tengan datos reales.
+5. Que el Perfil de Empresa en Google este verificado y tenga la misma informacion que la web.
+6. Que horarios, telefono, categoria, servicios, fotos y areas de servicio coincidan en Google Maps.
+7. Que Search Console tenga la propiedad del dominio verificada.
+8. Que no actives tags de Google Ads o analytics sin revisar cookies y consentimiento.
+9. Que no publiques claims de titulacion, seguro, certificaciones o reseñas sin prueba real.

@@ -1,11 +1,10 @@
 # Adam Peluqueria
 
-Landing page built with Next.js for a `peluquero / barbero a domicilio en Bilbao`.
+Web local SEO para un servicio de peluqueria y barberia a domicilio con base en Bilbao.
 
-The site is designed to convert paid and organic traffic into two primary actions:
-
-- WhatsApp reservations
-- Phone calls
+El proyecto ya no esta planteado como una landing centrada en Google Ads. La arquitectura actual
+prioriza trafico organico local, Google Business Profile, Google Maps, llamadas y contactos por
+WhatsApp.
 
 ## Stack
 
@@ -13,6 +12,7 @@ The site is designed to convert paid and organic traffic into two primary action
 - React 18
 - TypeScript
 - Tailwind CSS
+- Static export para Cloudflare Pages
 
 ## Local development
 
@@ -23,46 +23,65 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Scripts
+On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`:
 
 ```bash
-npm run dev
-npm run build
-npm run start
+npm.cmd run lint
+npm.cmd run build
 ```
+
+## Architecture
+
+- `/`: home local con servicios, zonas, fotos reales, GBP y FAQs.
+- `/servicios`: hub de servicios.
+- `/servicios/barberia-a-domicilio`
+- `/servicios/peluqueria-mayores-movilidad-reducida`
+- `/servicios/residencias`
+- `/servicios/hoteles-oficinas-eventos`
+- `/zonas`: cobertura principal y municipios pendientes de confirmacion.
+- `/sobre-adam`: confianza, enfoque y datos pendientes.
+- `/contacto`: WhatsApp, telefono, horario, email y Google Maps.
+- `/guias`: hub de contenidos.
+- `/guias/preparar-corte-a-domicilio-bilbao`
+- `/aviso-legal`, `/privacidad`, `/cookies`
 
 ## Configuration
 
-Set the public site URL in your environment when deploying:
+Set these variables in deployment:
 
-```bash
+```txt
 NEXT_PUBLIC_SITE_URL=https://adampeluqueria.com
 NEXT_PUBLIC_CONTACT_EMAIL=hola@adampeluqueria.com
+NEXT_PUBLIC_LEGAL_NAME=
+NEXT_PUBLIC_LEGAL_ADDRESS=
+NEXT_PUBLIC_SERVICE_ADDRESS=
+NEXT_PUBLIC_OPENING_HOURS=
+NEXT_PUBLIC_PROFESSIONAL_CREDENTIALS=
+NEXT_PUBLIC_GOOGLE_MAPS_URL=
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 LEGAL_TAX_ID=
+NEXT_PUBLIC_GOOGLE_TAG_ID=
+NEXT_PUBLIC_GOOGLE_WHATSAPP_CONVERSION_ID=
+NEXT_PUBLIC_GOOGLE_PHONE_CONVERSION_ID=
 ```
 
-Main business and SEO constants live in `lib/site.ts`, including:
+Business data, services, routes, FAQs, zones and image references live in `lib/site.ts`.
 
-- WhatsApp URL
-- Phone number
-- Service area
-- Site title and description
+## SEO and tracking notes
 
-The tax ID is intentionally not hardcoded in the repository. Keep it in `LEGAL_TAX_ID` and only
-publish it when the site is no longer in prelaunch mode.
+- Pages include canonical metadata, Open Graph data and JSON-LD where appropriate.
+- `sitemap.xml` is generated from the route registry in `lib/site.ts`.
+- Google Tag is not loaded until the visitor accepts non-essential cookies.
+- Consent Mode v2 fields are prepared before loading Google tags.
+- WhatsApp and phone clicks are tracked only when `gtag` is available and loaded.
 
-## Project structure
+## TODO before production
 
-- `app/page.tsx`: main landing page
-- `app/globals.css`: global design system and shared UI tokens
-- `app/aviso-legal/page.tsx`: legal placeholder page
-- `app/privacidad/page.tsx`: privacy placeholder page
-- `lib/site.ts`: contact, SEO, and service metadata
-
-## Notes
-
-- The current design direction is premium, minimal, and conversion-focused.
-- The page is optimized for mobile-first booking flows.
-- Legal pages are placeholders and should be completed with final business data before launch.
-- This project is ready for static deployment on Cloudflare Pages.
-- See `CLOUDFLARE_PAGES.md` for the recommended deployment flow.
+- Confirm legal name, tax ID, legal address and public email.
+- Confirm real opening hours and service areas.
+- Confirm whether Barakaldo, Getxo, Basauri and Portugalete are actually served.
+- Confirm prices, displacement supplements and service conditions.
+- Provide Google Maps / Google Business Profile URL.
+- Add Search Console verification token.
+- Confirm professional credentials, experience, insurance or certifications before publishing them.
+- Add more real photos of home, hotel, office or residence services.
